@@ -1,3 +1,4 @@
+const { malvin } = require('../malvin');
 const fetch = require("node-fetch");
 
 malvin({
