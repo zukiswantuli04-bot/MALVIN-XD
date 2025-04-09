@@ -35,7 +35,27 @@ malvin({
 
     return reply(`✅ Prefix successfully changed to *${newPrefix}*`);
 });
+//--------------------------------------------
+//  CHATBOT COMMANDS
+//--------------------------------------------
 
+malvin({
+    pattern: "chatbot",
+    description: "Enable or disable auto-typing feature.",
+    category: "admin",
+    filename: __filename
+},    
+async (conn, mek, m, { from, args, isOwner, reply }) => {
+    if (!isOwner) return reply("*📛 ᴏɴʟʏ ᴛʜᴇ ᴏᴡɴᴇʀ ᴄᴀɴ ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ!*");
+
+    const status = args[0]?.toLowerCase();
+    if (!["on", "off"].includes(status)) {
+        return reply("*🫟 ᴇxᴀᴍᴘʟᴇ:  .chatbot ᴏɴ*");
+    }
+
+    config.CHAT_BOT = status === "on" ? "true" : "false";
+    return reply(`Chatbot has been turned ${status}.`);
+});
 //--------------------------------------------
 //  BOT MODE COMMANDS
 //--------------------------------------------
