@@ -15,6 +15,25 @@ async (conn, mek, m, { from, body, isOwner }) => {
          } 
    );
 
+//chatbot 
+malvin({
+  on: "body"
+},    
+async (conn, mek, m, { from, body, isOwner }) => {
+    const filePath = path.join(__dirname, '../data/chatbot.json');
+    const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    for (const text in data) {
+        if (body.toLowerCase() === text.toLowerCase()) {
+            
+            if (config.CHAT_BOT === 'true') {
+                //if (isOwner) return;        
+                await m.reply(data[text])
+            
+            }
+        }
+    }                
+});
+
 //auto_voice
 malvin({
   on: "body"
