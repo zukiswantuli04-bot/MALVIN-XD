@@ -1,3 +1,5 @@
+
+
 /*
 Project Name : MALVIN XMD
 Creator      : Malvin King ( Mr Lord Malvin )
@@ -10,7 +12,6 @@ Support      : wa.me/263714757857
 const config = require('../settings');
 const { malvin, commands } = require('../malvin');
 const os = require("os");
-const IMG = require('../data/king');
 const { runtime } = require('../lib/functions');
 
 malvin({
@@ -94,7 +95,7 @@ malvin({
 
         // Send the message with image and updated unique design
         const vv = await conn.sendMessage(from, { 
-            image: { url: config.MENU_IMG }, 
+            image: { url: "https://files.catbox.moe/2prjby.jpg" }, 
             caption: desc, 
             contextInfo: {
                 mentionedJid: [''], 
@@ -150,24 +151,23 @@ malvin({
 
  ${config.DESCRIPTION}`);
 await conn.sendMessage(
-  from,
-  {
-    image: { url: IMG.ADMIN_IMG },
-    caption: reply1,
-    contextInfo: {
-      mentionedJid: [m.sender],
-      forwardingScore: 999,
-      isForwarded: true,
-      forwardedNewsletterMessageInfo: {
-        newsletterJid: '120363398430045533@newsletter',
-        newsletterName: '👤ᴀᴅᴍɪɴ ᴍᴇɴᴜ',
-        serverMessageId: 143
-      }
-    }
-  },
-  { quoted: mek }
-);
-
+            from,
+            {
+                image: { url: `https://files.catbox.moe/l1uebm.jpg` },
+                caption: reply1,
+                contextInfo: {
+                    mentionedJid: [m.sender],
+                    forwardingScore: 999,
+                    isForwarded: true,
+                    forwardedNewsletterMessageInfo: {
+                        newsletterJid: '120363398430045533@newsletter',
+                        newsletterName: '👤ᴀᴅᴍɪɴ ᴍᴇɴᴜ',
+                        serverMessageId: 143
+                    }
+                }
+            },
+            { quoted: mek }
+        );
         
                        break;
                     case '2':               
@@ -194,7 +194,7 @@ await conn.sendMessage(
 await conn.sendMessage(
             from,
             {
-                image: { url: IMG.PRIVATE_IMG },
+                image: { url: `https://files.catbox.moe/l1uebm.jpg` },
                 caption: reply2,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -242,7 +242,7 @@ await conn.sendMessage(
 await conn.sendMessage(
             from,
             {
-                image: { url: IMG.MAINMENU_IMG },
+                image: { url: `https://files.catbox.moe/2prjby.jpg` },
                 caption: reply3,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -279,7 +279,7 @@ await conn.sendMessage(
 await conn.sendMessage(
             from,
             {
-                image: { url: INFO_IMG },
+                image: { url: `https://files.catbox.moe/7hqhsw.jpg` },
                 caption: reply4,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -330,7 +330,7 @@ await conn.sendMessage(
 await conn.sendMessage(
             from,
             {
-                image: { url: IMG.SETTINGS_IMG },
+                image: { url: `https://files.catbox.moe/e0kj4n.jpg` },
                 caption: reply5,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -379,7 +379,7 @@ await conn.sendMessage(
 await conn.sendMessage(
             from,
             {
-                image: { url: IMG.OWNER_IMG },
+                image: { url: `https://files.catbox.moe/3ua1n7.jpg` },
                 caption: reply6,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -435,7 +435,7 @@ await conn.sendMessage(
 await conn.sendMessage(
             from,
             {
-                image: { url: IMG.OWNER_IMG },
+                image: { url: `https://files.catbox.moe/ebqp72.png` },
                 caption: reply7,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -468,7 +468,7 @@ await conn.sendMessage(
 await conn.sendMessage(
             from,
             {
-                image: { url: IMG.MOVIE_IMG },
+                image: { url: `https://files.catbox.moe/e0kj4n.jpg` },
                 caption: reply8,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -508,7 +508,7 @@ await conn.sendMessage(
 await conn.sendMessage(
             from,
             {
-                image: { url: IMG.MAIN_IMG },
+                image: { url: `https://files.catbox.moe/7hqhsw.jpg` },
                 caption: reply9,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -580,7 +580,7 @@ await conn.sendMessage(
 await conn.sendMessage(
             from,
             {
-                image: { url: IMG.GROUP_IMG },
+                image: { url: `https://files.catbox.moe/2prjby.jpg` },
                 caption: reply10,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -622,7 +622,7 @@ await conn.sendMessage(
 await conn.sendMessage(
             from,
             {
-                image: { url: IMG.CONVERT_IMG },
+                image: { url: `https://files.catbox.moe/l1uebm.jpg` },
                 caption: reply11,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -662,7 +662,7 @@ await conn.sendMessage(
 await conn.sendMessage(
             from,
             {
-                image: { url: IMG.SEARCH_IMG },
+                image: { url: `https://files.catbox.moe/e0kj4n.jpg` },
                 caption: reply12,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -713,7 +713,7 @@ await conn.sendMessage(
 await conn.sendMessage(
             from,
             {
-                image: { url: IMG.UTILITY_IMG },
+                image: { url: `https://files.catbox.moe/7hqhsw.jpg` },
                 caption: reply13,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -813,7 +813,7 @@ await conn.sendMessage(
 await conn.sendMessage(
             from,
             {
-                image: { url: IMG.FUN_IMG },
+                image: { url: `https://files.catbox.moe/e0kj4n.jpg` },
                 caption: reply14,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -858,7 +858,7 @@ await conn.sendMessage(
 await conn.sendMessage(
             from,
             {
-                image: { url: IMG.TOOLS_IMG },
+                image: { url: `https://files.catbox.moe/ebqp72.png` },
                 caption: reply15,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -892,7 +892,7 @@ await conn.sendMessage(
 await conn.sendMessage(
             from,
             {
-                image: { url: IMG.STICKER_IMG },
+                image: { url: `https://files.catbox.moe/l1uebm.jpg` },
                 caption: reply16,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -925,7 +925,7 @@ await conn.sendMessage(
 await conn.sendMessage(
             from,
             {
-                image: { url: IMG.RANDOM_IMG },
+                image: { url: `https://files.catbox.moe/e0kj4n.jpg` },
                 caption: reply17,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -958,7 +958,7 @@ await conn.sendMessage(
 await conn.sendMessage(
             from,
             {
-                image: { url: IMG.MISC_IMG },
+                image: { url: `https://files.catbox.moe/l1uebm.jpg` },
                 caption: reply18,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -997,7 +997,7 @@ await conn.sendMessage(
 await conn.sendMessage(
             from,
             {
-                image: { url: IMG.ANIME_IMG },
+                image: { url: `https://files.catbox.moe/2prjby.jpg` },
                 caption: reply19,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -1031,7 +1031,7 @@ await conn.sendMessage(
 await conn.sendMessage(
             from,
             {
-                image: { url: IMG.SUPPORT_IMG },
+                image: { url: `https://files.catbox.moe/7hqhsw.jpg` },
                 caption: reply20,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -1073,7 +1073,7 @@ await conn.sendMessage(
 await conn.sendMessage(
             from,
             {
-                image: { url: IMG.AI_IMG },
+                image: { url: `https://files.catbox.moe/ebqp72.png` },
                 caption: reply21,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -1107,7 +1107,7 @@ await conn.sendMessage(
 await conn.sendMessage(
             from,
             {
-                image: { url: IMG.OTHER_IMG },
+                image: { url: `https://files.catbox.moe/l1uebm.jpg` },
                 caption: reply22,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -1149,7 +1149,7 @@ await conn.sendMessage(
 await conn.sendMessage(
             from,
             {
-                image: { url: IMG.NSFW_IMG },
+                image: { url: `https://files.catbox.moe/2prjby.jpg` },
                 caption: reply23,
                 contextInfo: {
                     mentionedJid: [m.sender],
