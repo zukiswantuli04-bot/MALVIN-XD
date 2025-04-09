@@ -1,6 +1,6 @@
 
 
-/* Created by King Malvin 🕵
+/* Created by King Malvin 0 🕵
 Contact dev1: 263780934873 ♻️
 Contact dev2: https://t.me/malvinking2 ♻️
 © Just give credit will you ⚠
