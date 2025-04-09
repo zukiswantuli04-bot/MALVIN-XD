@@ -1,11 +1,9 @@
-
-
-
 const { malvin } = require("../malvin");
+const config = require("../settings");
 const moment = require("moment");
 
-let botStartTime = Date.now(); // Recording the start time of the bot
-const ALIVE_IMG = "https://files.catbox.moe/7hqhsw.jpg"; // Make sure this URL is valid
+const ALIVE_IMG = "https://files.catbox.moe/7hqhsw.jpg";
+let botStartTime = Date.now();
 
 malvin({
     pattern: "alive",
@@ -15,40 +13,46 @@ malvin({
     filename: __filename
 }, async (conn, mek, m, { reply, from }) => {
     try {
-        const pushname = m.pushName || "User"; // Username or default value
+        const pushname = m.pushName || "User";
         const currentTime = moment().format("HH:mm:ss");
         const currentDate = moment().format("dddd, MMMM Do YYYY");
 
-        const runtimeMilliseconds = Date.now() - botStartTime;
-        const runtimeSeconds = Math.floor((runtimeMilliseconds / 1000) % 60);
-        const runtimeMinutes = Math.floor((runtimeMilliseconds / (1000 * 60)) % 60);
-        const runtimeHours = Math.floor(runtimeMilliseconds / (1000 * 60 * 60));
+        const ms = Date.now() - botStartTime;
+        const runtime = [
+            Math.floor(ms / (1000 * 60 * 60)),
+            Math.floor((ms / (1000 * 60)) % 60),
+            Math.floor((ms / 1000) % 60),
+        ].map((v) => v.toString().padStart(2, '0')).join(":");
 
-        const formattedInfo = `
-╭┄┄┄┄[*ᴍᴀʟᴠɪɴ xᴅ sᴛᴀᴛᴜs*]┄┄┄┄
-┊
-┊     Hi 🫵🏽 ${pushname}
-┊
-┊🕒 *ᴛɪᴍᴇ*: ${currentTime}
-┊📅 *ᴅᴀᴛᴇ*: ${currentDate}
-┊⏳ *ᴜᴘᴛɪᴍᴇ*: ${runtimeHours} hours, ${runtimeMinutes} minutes, ${runtimeSeconds} seconds
-╰───────────────
+        const toTinyCap = (text) =>
+            text.split("").map(c => {
+                const map = { a:'ᴀ', b:'ʙ', c:'ᴄ', d:'ᴅ', e:'ᴇ', f:'ғ', g:'ɢ',
+                    h:'ʜ', i:'ɪ', j:'ᴊ', k:'ᴋ', l:'ʟ', m:'ᴍ', n:'ɴ',
+                    o:'ᴏ', p:'ᴘ', q:'ǫ', r:'ʀ', s:'s', t:'ᴛ', u:'ᴜ',
+                    v:'ᴠ', w:'ᴡ', x:'x', y:'ʏ', z:'ᴢ' };
+                return map[c.toLowerCase()] || c;
+            }).join("");
 
-> 🤖 *Status*: *Malvin is Alive and Ready!*
+        const msg = `
+╭─❍ *${toTinyCap("malvin xd status")}* ❍─╮
+│  
+│  🧑🏻‍💻 ʜɪ: *${pushname}*
+│  🕒 ᴛɪᴍᴇ: *${currentTime}*
+│  📅 ᴅᴀᴛᴇ: *${currentDate}*
+│  ⏳ ᴜᴘᴛɪᴍᴇ: *${runtime}*
+│
+│  ⚙ ᴍᴏᴅᴇ: *${config.MODE}*
+│  ✨ ᴠᴇʀsɪᴏɴ: *${config.version}*
+╰───────────────❍
 
-🎉 *Enjoy the Service!*
+✅ *Malvin is online and operational!*
+🔧 *System running smoothly!*
         `.trim();
 
-        // Check if the image is defined
-        if (!ALIVE_IMG || !ALIVE_IMG.startsWith("http")) {
-            throw new Error("Invalid ALIVE_IMG URL. Please set a valid image URL.");
-        }
-
-        // Send the message with image and caption
         await conn.sendMessage(from, {
-            image: { url: ALIVE_IMG }, // Check that the URL is valid
-            caption: formattedInfo,
-            contextInfo: { 
+            image: { url: ALIVE_IMG },
+            caption: msg,
+            contextInfo: {
                 mentionedJid: [m.sender],
                 forwardingScore: 999,
                 isForwarded: true,
@@ -61,16 +65,7 @@ malvin({
         }, { quoted: mek });
 
     } catch (error) {
-        console.error("Error in alive command: ", error);
-        
-        // Respond with error details 
-        const errorMessage = `
-❌ An error occurred while processing the alive command.
-🛠 *Error Details*:
-${error.message}
-
-Please report this issue or try again later.
-        `.trim();
-        return reply(errorMessage);
+        console.error("Error in alive command:", error);
+        return reply(`❌ Error in alive command:\n${error.message}`);
     }
 });
