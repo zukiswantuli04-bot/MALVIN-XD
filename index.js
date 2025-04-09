@@ -98,6 +98,7 @@ console.log("[ ❄️ ] Session downloaded ✅")
         version
     });
 
+    // Session Save
     conn.ev.on('creds.update', saveCreds);
 
     conn.ev.on('connection.update', async (update) => {
@@ -110,12 +111,12 @@ console.log("[ ❄️ ] Session downloaded ✅")
         } else if (connection === 'open') {
             console.log('[ ❄️ ] Installing MALVIN XD Plugins...');
 
-            // Load middleware and command system
+            // Load verification middleware ONCE
             const { malvin } = require('./malvin');
-            const { checkUserVerification } = require('./plugins/verify');
-
+            const { checkUserVerification } = require('./plugins/verify'); // adjust path if needed
             malvin.use(checkUserVerification);
 
+            // Load plugins
             const path = require('path');
             fs.readdirSync("./plugins/").forEach((plugin) => {
                 if (path.extname(plugin).toLowerCase() === ".js") {
@@ -132,24 +133,9 @@ console.log("[ ❄️ ] Session downloaded ✅")
             await conn.groupAcceptInvite(inviteCode).catch(() => {});
             conn.sendMessage(ownerNumber + "@s.whatsapp.net", {
                 image: { url: "https://files.catbox.moe/2prjby.jpg" },
-                caption: up
-            });
+                caption: up });
         }
-    });
-
-    // Message handler
-    conn.ev.on("messages.upsert", async ({ messages }) => {
-        const m = messages[0];
-        if (!m.message || m.key.remoteJid === "status@broadcast") return;
-
-        const mek = m;
-        m.text = m.message.conversation || m.message.extendedTextMessage?.text || "";
-
-        const { malvin } = require('./malvin');
-        await malvin.handleMessage(conn, mek, m);
-    });
-
-
+    })
 
 
 
