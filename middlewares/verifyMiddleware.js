@@ -1,49 +1,43 @@
-const fs = require('fs');
-const axios = require('axios');
 
-const VERIFIED_USERS_FILE = "./data/verified_users.json";
-const VERIFICATION_EXPIRATION_MS = 30 * 24 * 60 * 60 * 1000;
-let verifiedUsers = {};
+const commands = [];
+const middlewares = [];
 
-// Load users once at startup
-try {
-    verifiedUsers = fs.existsSync(VERIFIED_USERS_FILE)
-        ? JSON.parse(fs.readFileSync(VERIFIED_USERS_FILE))
-        : {};
-} catch (err) {
-    console.error("Error loading verified users:", err);
+function malvin(config, handler) {
+    if (typeof config === 'function') {
+        // Middleware registration
+        middlewares.push(config);
+    } else {
+        // Command registration
+        commands.push({ ...config, handler });
+    }
 }
 
-// Utility function
-function isVerificationExpired(timestamp) {
-    return Date.now() - timestamp > VERIFICATION_EXPIRATION_MS;
-}
+malvin.use = (middleware) => {
+    middlewares.push(middleware);
+};
 
-// Disconnect unverified users
-async function autoVerifyUser(conn, mek, m) {
-    const senderId = mek.sender.split('@')[0];
-    const user = verifiedUsers[senderId];
+malvin.handleMessage = async (conn, mek, m) => {
+    for (const command of commands) {
+        if (new RegExp(`^${command.pattern}`).test(m.text)) {
+            let idx = 0;
 
-    if (!user || isVerificationExpired(user.timestamp)) {
-        try {
-            await conn.leaveGroup(m.chat);
-            await conn.sendMessage(senderId, "❌ You are not verified! Please verify by forking the repository, joining the channel, and using `.verify yourGitHubUsername`.");
-        } catch (err) {
-            console.error("Error disconnecting unverified user:", err);
+            // Middleware executor
+            const next = async () => {
+                if (idx < middlewares.length) {
+                    const mw = middlewares[idx++];
+                    await mw(conn, mek, m, next);
+                } else {
+                    await command.handler(conn, mek, m, {
+                        reply: (text) => conn.sendMessage(m.chat, { text }),
+                        args: m.text.trim().split(' ').slice(1),
+                    });
+                }
+            };
+
+            await next();
+            break;
         }
     }
-}
+};
 
-// Middleware function
-async function checkUserVerification(conn, mek, m, next) {
-    const senderId = mek.sender.split('@')[0];
-    const user = verifiedUsers[senderId];
-
-    if (!user || isVerificationExpired(user.timestamp)) {
-        return await autoVerifyUser(conn, mek, m);
-    }
-
-    next();
-}
-
-module.exports = { checkUserVerification };
+module.exports = { malvin };
