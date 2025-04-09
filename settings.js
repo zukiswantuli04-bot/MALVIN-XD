@@ -20,7 +20,7 @@ module.exports = {
 
     LINK_ACTION: "kick", // "kick", "mute", or "none"
 
-    chatbotEnabled: stringToBool(process.env.chatbotEnabled || "true"),
+    CHAT_BOT: stringToBool(process.env.CHAT_BOT || "true"),
 
     PREFIX: process.env.PREFIX || ".",
 
