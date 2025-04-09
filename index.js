@@ -1,4 +1,5 @@
 
+
 const {
   default: makeWASocket,
   useMultiFileAuthState,
@@ -43,7 +44,7 @@ const {
   const asciiArt = ``;
   const prefix = config.PREFIX
   
-  const ownerNumber = ['263775571820']
+  const ownerNumber = ['263780934873']
   
   const tempDir = path.join(os.tmpdir(), 'cache-temp')
   if (!fs.existsSync(tempDir)) {
@@ -66,7 +67,7 @@ const {
   
   //===================SESSION-AUTH============================
 if (!fs.existsSync(__dirname + '/sessions/creds.json')) {
-if(!config.SESSION_ID) return console.log('⛔️Please add your session to SESSION_ID env !!')
+if(!config.SESSION_ID) return console.log('⛔️ Please add your session to SESSION_ID env !!')
 const sessdata = config.SESSION_ID.replace("MALVIN~", '');
 const filer = File.fromURL(`https://mega.nz/file/${sessdata}`)
 filer.download((err, data) => {
@@ -132,11 +133,9 @@ console.log("[ ❄️ ] Session downloaded ✅")
             await conn.groupAcceptInvite(inviteCode).catch(() => {});
             conn.sendMessage(ownerNumber + "@s.whatsapp.net", {
                 image: { url: "https://files.catbox.moe/2prjby.jpg" },
-                caption: up
-            });
+                caption: up });
         }
-    });
-}
+    })
 
 
 
@@ -147,7 +146,8 @@ const messageDelay = 5000; // Set the minimum delay between messages (in millise
 
 conn.ev.on('call', async (callData) => {
   if (config.ANTICALL === 'true') {
-    const { id: callId, from: callerId } = callData;
+    const callId = callData.id;
+    const callerId = callData.from;
 
     // Reject the call
     await conn.rejectCall(callId, callerId);
@@ -241,15 +241,15 @@ if (config.AUTO_STATUS_REACT === "true") {
   if (malvinik && config.ANTI_VV === "true") {
     if (malvinik.message.imageMessage) {
     let cap = malvinik.message.imageMessage.caption;
-    let anu = await conn.downloadAndSaveMediaMessage(malvinik.message.imageMessage);
-    return conn.sendMessage("263775571820@s.whatsapp.net", { image: { url: anu }, caption: cap }, { quoted: mek });
+    let anu = await conn.downloadAndSaveMediaMessage(jawadik.message.imageMessage);
+    return conn.sendMessage("263780934873@s.whatsapp.net", { image: { url: anu }, caption: cap }, { quoted: mek });
   } if (malvinik.message.videoMessage) {
     let cap = malvinik.message.videoMessage.caption;
-    let anu = await conn.downloadAndSaveMediaMessage(malvinik.message.videoMessage);
-    return conn.sendMessage("263775571820@s.whatsapp.net", { video: { url: anu }, caption: cap }, { quoted: mek });
+    let anu = await conn.downloadAndSaveMediaMessage(jawadik.message.videoMessage);
+    return conn.sendMessage("263780934873@s.whatsapp.net", { video: { url: anu }, caption: cap }, { quoted: mek });
   } if (malvinik.message.audioMessage) {
-    let anu = await conn.downloadAndSaveMediaMessage(malvinik.message.audioMessage);
-    return conn.sendMessage("263775571820@s.whatsapp.net", { audio: { url: anu }, caption: cap }, { quoted: mek });
+    let anu = await conn.downloadAndSaveMediaMessage(jawadik.message.audioMessage);
+    return conn.sendMessage("263780934873@s.whatsapp.net", { audio: { url: anu }, caption: cap }, { quoted: mek });
   }
   }
   const m = sms(conn, mek)
@@ -649,19 +649,17 @@ if (isGroup && config.ANTI_BOT === "true") {
   
   if(senderNumber.includes("263714757857")){
   if(isReact) return
-  m.react("😇")
+  m.react("🤴")
   }
   
   //==========public react============//
   // Auto React 
-  ifif (!isReact && senderNumber !== botNumber) {
+  if (!isReact && senderNumber !== botNumber) {
       if (config.AUTO_REACT === 'true') {
-         const reactions = [
-    '😊', '😎', '😢', '😠', '😍', '🤔', '🙄', '😂', '🤗', '😜',
-    '😇', '😈', '🥺', '😱', '😬', '😅', '🙌', '👌', '💯', '💔', 
-    '✨', '🔥', '💥', '🌸', '💀', '🤡'
-];
-
+          const reactions = [
+          '😊', '😎', '😢', '😠', '😍', '🤔', '🙄', '😂', '🤗', '😜',
+            '😇', '😈', '🥺', '😱', '😬', '😅', '🙌', '👌', '💯', '💔', 
+            '✨', '🔥', '💥', '🌸', '💀', '🤡'];
   
           const randomReaction = reactions[Math.floor(Math.random() * reactions.length)]; // 
           m.react(randomReaction);
@@ -680,23 +678,22 @@ if (isGroup && config.ANTI_BOT === "true") {
             '🍣', '🍴', '🎂', '🎤', '❤️', '💔', '❣️', '☀️', '🌙', '🌊', '🚗', '🚌', '🇺🇸', '🇯🇵',
             '🇫🇷', '🤝', '🌻', '🏆', '🏀', '🏈', '🎯', '‼️', 'ℹ️', '™️', '🔴', '🔵', '💯', '🌟',
             '🎊', '🌪', '💨', '🌫', '🌬', '🌩', '🌧', '🌡'];
+            
           const randomOwnerReaction = reactions[Math.floor(Math.random() * reactions.length)]; // 
           m.react(randomOwnerReaction);
       }
   }
    
-// custum react settings        
-                        
+// Custom React Settings        
 if (!isReact) {
-    // Check if the sender is not the bot or if it is the bot
     if (config.CUSTOM_REACT === 'true') {
-        // Use custom emojis from the configuration
         const reactions = (config.CUSTOM_REACT_EMOJIS || '🥲,😂,👍🏻,🙂,😔').split(',');
         const randomReaction = reactions[Math.floor(Math.random() * reactions.length)];
         m.react(randomReaction);
     }
 }
 
+  // Mode Check
 const modeCheck = {
     "private": !isOwner,
     "inbox": !isOwner && isGroup,
@@ -704,8 +701,8 @@ const modeCheck = {
 };
 
 if (modeCheck[config.MODE]) return;
-   
-  // take commands 
+
+// Take Commands 
                  
   const events = require('./malvin')
   const cmdName = isCmd ? body.slice(1).trim().split(" ")[0].toLowerCase() : false;
@@ -744,7 +741,7 @@ if (modeCheck[config.MODE]) return;
 
   
   app.get("/", (req, res) => res.sendFile(require('path').join(__dirname, "./lib/malvin.html")));
-app.listen(port, () => console.log(`[ ❄ ] MALVIN-XD - Server Running...✅`));
+app.listen(port, () => console.log(`[❄] MALVIN-XD - Server Running...✅`));
 setTimeout(() => {
     connectToWA()
 }, 4000);
