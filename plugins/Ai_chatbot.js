@@ -1,3 +1,5 @@
+
+
 /*
 Project Name : MALVIN XD
 Creator      : Malvin King (Mr. Lord Malvin)
@@ -14,7 +16,7 @@ Support      : wa.me/263714757857
 */
 
 const { malvin, commands } = require('../malvin');
-const { chatbotEnabled } = require('./settings');
+const { chatbotEnabled } = require('../settings');
 
 // Expanded phrases and responses, designed to sound more engaging and conversational
 const phrasesResponses = [
@@ -98,15 +100,9 @@ const phrasesResponses = [
     // Add more responses as needed
 ];
 
-if (chatbotEnabled) {
-    const text = body.toLowerCase();
 
-    for (let entry of phrasesResponses) {
-        if (entry.phrase.some(p => text.includes(p))) {
-            return await reply(entry.response);
-        }
-    }
-}
+
+// Ensuring that this code uses async properly and fixes the await issue.
 
 malvin({
     pattern: "chat",
@@ -118,18 +114,33 @@ malvin({
 }, async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, pushname }) => {
     try {
         let response = "";
-        for (let entry of phrasesResponses) {
-            if (entry.phrase.some(phrase => body.toLowerCase().includes(phrase))) {
-                response = entry.response;
-                break;
+
+        // Async function to handle chatbot response logic
+        async function handleChatbotResponse(body, reply) {
+            // Check if chatbot is enabled
+            if (chatbotEnabled) {
+                const text = body.toLowerCase();
+
+                // Loop through phrases and responses
+                for (let entry of phrasesResponses) {
+                    if (entry.phrase.some(p => text.includes(p))) {
+                        return await reply(entry.response);  // Await response inside async function
+                    }
+                }
             }
         }
 
+        // Call the async function to handle response
+        await handleChatbotResponse(body, async (msg) => {
+            await conn.sendMessage(from, { text: msg });
+        });
+
+        // Default response if no match found
         if (!response) {
             response = "Oops! I didn't catch that. Want to try again or ask something else? 😅";
         }
 
-        // Send the response back
+        // Send the default response back if no match found
         await conn.sendMessage(from, { text: response });
 
     } catch (e) {
@@ -137,3 +148,4 @@ malvin({
         reply(`Oops, something went wrong! Error: ${e}`);
     }
 });
+
