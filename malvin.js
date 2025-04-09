@@ -1,31 +1,46 @@
-var commands = [];
-var middlewares = [];
+// malvin.js
+const commands = [];
+const middlewares = [];
 
-function malvin(info, func) {
-    var data = info;
-    data.function = func;
-    if (!data.dontAddCommandList) data.dontAddCommandList = false;
-    if (!info.desc) info.desc = '';
-    if (!data.fromMe) data.fromMe = false;
-    if (!info.category) info.category = 'misc';
-    if (!info.filename) info.filename = "Not Provided";
-    commands.push(data);
-    return data;
+function malvin(config, handler) {
+    if (typeof config === 'function') {
+        // Register middleware
+        middlewares.push(config);
+    } else {
+        // Register command
+        commands.push({ ...config, handler });
+    }
 }
 
-// Add middleware support
-malvin.use = function (middlewareFn) {
-    middlewares.push(middlewareFn);
+malvin.use = (middleware) => {
+    middlewares.push(middleware);
 };
 
-malvin.commands = commands;
-malvin.middlewares = middlewares;
+// Dispatcher that runs middlewares before commands
+malvin.handleMessage = async (conn, mek, m) => {
+    const text = m.text || '';
 
-module.exports = {
-    malvin,
-    AddCommand: malvin,
-    Function: malvin,
-    Module: malvin,
-    commands,
-    middlewares,
+    for (const command of commands) {
+        const pattern = new RegExp(`^\\.?${command.pattern}`, 'i'); // allow dot prefix
+        if (pattern.test(text)) {
+            let index = 0;
+
+            const next = async () => {
+                if (index < middlewares.length) {
+                    const mw = middlewares[index++];
+                    await mw(conn, mek, m, next);
+                } else {
+                    const reply = (txt) => conn.sendMessage(m.chat, { text: txt }, { quoted: mek });
+                    const args = text.trim().split(' ').slice(1);
+
+                    await command.handler(conn, mek, m, { reply, args });
+                }
+            };
+
+            await next();
+            break;
+        }
+    }
 };
+
+module.exports = { malvin };
