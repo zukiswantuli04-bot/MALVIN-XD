@@ -1,3 +1,5 @@
+
+
 /* Created by King Malvin 🕵
 Contact dev1: 263780934873 ♻️
 Contact dev2: https://t.me/malvinking2 ♻️
@@ -7,12 +9,25 @@ Contact dev2: https://t.me/malvinking2 ♻️
 const config = require('../settings');
 const { malvin, commands } = require('../malvin');
 
-// Utility function to generate command list for a category
+// Function to convert string to tinycap
+const toTinyCap = (text) => {
+    const tinyMap = {
+        a: 'ᴀ', b: 'ʙ', c: 'ᴄ', d: 'ᴅ', e: 'ᴇ', f: 'ғ', g: 'ɢ',
+        h: 'ʜ', i: 'ɪ', j: 'ᴊ', k: 'ᴋ', l: 'ʟ', m: 'ᴍ', n: 'ɴ',
+        o: 'ᴏ', p: 'ᴘ', q: 'ǫ', r: 'ʀ', s: 's', t: 'ᴛ', u: 'ᴜ',
+        v: 'ᴠ', w: 'ᴡ', x: 'x', y: 'ʏ', z: 'ᴢ'
+    };
+    return text.toLowerCase().split('').map(char => tinyMap[char] || char).join('');
+};
+
+// Generate styled command list per category
 const generateCategoryMenu = (category) => {
-    const categoryCommands = commands.filter(cmd => cmd.category === category && cmd.pattern && !cmd.dontAddCommandList);
-    return categoryCommands.length > 0
-        ? categoryCommands.map(cmd => cmd.pattern).join(', ')
-        : 'No commands available.';
+    const categoryCommands = commands.filter(
+        cmd => cmd.category === category && cmd.pattern && !cmd.dontAddCommandList
+    );
+    return categoryCommands.length
+        ? categoryCommands.map(cmd => `  ➤ ${toTinyCap(cmd.pattern)}`).join('\n')
+        : '  ✖ No commands available.';
 };
 
 malvin({
@@ -22,47 +37,41 @@ malvin({
     desc: "Get command list",
     category: "main",
     filename: __filename
-}, async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
+}, async (conn, mek, m, { from, pushname, reply }) => {
     try {
-        // List of categories to generate menus for
         const categories = [
-            'admin', 'owner1', 'menu', 'info', 'settings', 'owner', 'download', 
-            'movie', 'main', 'group', 'convert', 'search', 'utility', 'fun', 
-            'game', 'tools', 'sticker', 'random', 'misc', 'anime', 'stalk', 
+            'admin', 'owner1', 'menu', 'info', 'settings', 'owner', 'download',
+            'movie', 'main', 'group', 'convert', 'search', 'utility', 'fun',
+            'game', 'tools', 'sticker', 'random', 'misc', 'anime', 'stalk',
             'support', 'logo', 'other', 'nsfw'
         ];
 
-        // Generate the menu for each category
-        const menu = categories.reduce((acc, category) => {
-            acc[category] = generateCategoryMenu(category);
-            return acc;
-        }, {});
+        const menu = categories.map(category => {
+            const cmds = generateCategoryMenu(category);
+            return `┌──『 *${category.toUpperCase()}* 』\n${cmds}\n└─────────────\n`;
+        }).join('\n');
 
-        // Constructing the menu message
         const madeMenu = `
 ╭───❍「 *${config.BOT_NAME}* 」
-┊ 🧑 *ᴜsᴇʀ:* ${pushname} 
-┊ 🌐 *ᴏᴅᴇ:* *[${config.MODE}]*
-┊ ✨ *ᴘʀᴇғɪx:* *[${config.PREFIX}]*
-┊ 🪀 *ᴛᴏᴛᴀʟ ᴄᴏᴍᴍᴀɴᴅs :* *${commands.length}*
-┊ 🎐 *ᴠᴇʀsɪᴏɴ:* *${config.version} ʙᴇᴛᴀ☯︎*
-╰───────────❍
+│ 🧑 *User:* ${pushname}
+│ ⚙️ *Mode:* ${config.MODE}
+│ ✨ *Prefix:* ${config.PREFIX}
+│ 🧩 *Total Commands:* ${commands.length}
+│ 🧪 *Version:* ${config.version} Beta
+╰─────────────────❍
 
-${Object.entries(menu).map(([category, commandsList]) => {
-    return `   *✦『 ${category.toUpperCase()} CMD 』✦\n*╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄╾╾╾*\n${commandsList}\n*╰──────────●●►*\n`;
-}).join('\n')}
+${menu}
 
-╭──────────╾╾╾
+╭──────────────◆
 ${config.DESCRIPTION}
-╰──────────╾╾╾
+╰──────────────◆
 `;
 
-        // Send the message with the menu
         await conn.sendMessage(
             from,
             {
-                image: { url: `https://files.catbox.moe/7hqhsw.jpg` },
-                caption: madeMenu,
+                image: { url: 'https://files.catbox.moe/7hqhsw.jpg' },
+                caption: madeMenu.trim(),
                 contextInfo: {
                     mentionedJid: [m.sender],
                     forwardingScore: 999,
@@ -78,6 +87,6 @@ ${config.DESCRIPTION}
         );
     } catch (err) {
         console.error(err);
-        reply('Something went wrong while generating the menu.');
+        reply('⚠️ Something went wrong while generating the menu.');
     }
 });
