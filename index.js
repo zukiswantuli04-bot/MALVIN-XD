@@ -148,7 +148,7 @@ console.log("[ ❄️ ] Session downloaded ✅")
         const { malvin } = require('./malvin');
         await malvin.handleMessage(conn, mek, m);
     });
-}
+
 
 
 
