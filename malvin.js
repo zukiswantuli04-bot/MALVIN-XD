@@ -1,27 +1,31 @@
-// malvin.js
-const commands = [];
-const middlewares = [];
+// malvin.js (integrating both parts)
 
-function malvin(config, handler) {
-    if (typeof config === 'function') {
-        // Register middleware
-        middlewares.push(config);
-    } else {
-        // Register command
-        commands.push({ ...config, handler });
-    }
+var commands = [];
+var middlewares = [];
+
+function malvin(info, func) {
+    var data = info;
+    data.function = func;
+    if (!data.dontAddCommandList) data.dontAddCommandList = false;
+    if (!info.desc) info.desc = '';
+    if (!data.fromMe) data.fromMe = false;
+    if (!info.category) info.category = 'misc';
+    if (!info.filename) info.filename = "Not Provided";
+    commands.push(data);
+    return data;
 }
 
-malvin.use = (middleware) => {
-    middlewares.push(middleware);
+// Add middleware support
+malvin.use = function (middlewareFn) {
+    middlewares.push(middlewareFn);
 };
 
-// Dispatcher that runs middlewares before commands
+// Command handler function
 malvin.handleMessage = async (conn, mek, m) => {
     const text = m.text || '';
 
     for (const command of commands) {
-        const pattern = new RegExp(`^\\.?${command.pattern}`, 'i'); // allow dot prefix
+        const pattern = new RegExp(`^\\.?${command.pattern}`, 'i');
         if (pattern.test(text)) {
             let index = 0;
 
@@ -33,7 +37,7 @@ malvin.handleMessage = async (conn, mek, m) => {
                     const reply = (txt) => conn.sendMessage(m.chat, { text: txt }, { quoted: mek });
                     const args = text.trim().split(' ').slice(1);
 
-                    await command.handler(conn, mek, m, { reply, args });
+                    await command.function(conn, mek, m, { reply, args });
                 }
             };
 
@@ -43,4 +47,11 @@ malvin.handleMessage = async (conn, mek, m) => {
     }
 };
 
-module.exports = { malvin };
+module.exports = {
+    malvin,
+    AddCommand: malvin,
+    Function: malvin,
+    Module: malvin,
+    commands,
+    middlewares,
+};
