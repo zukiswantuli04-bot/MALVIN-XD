@@ -1,44 +1,45 @@
 const { malvin } = require('../malvin');
-const config = require('../settings');
 
-// Mots clés déclencheurs
-const triggerWords = ["send", "envoie", "envoi", "abeg"];
+// Trigger keywords
+const triggerWords = ["send", "share", "forward", "status", "abeg"];
 
 malvin({
     pattern: "statusAuto",
     react: "📤",
-    desc: "Répond automatiquement à une demande de statut.",
+    desc: "Automatically responds to status requests when a trigger word is detected.",
     category: "main",
     use: ".statusAuto",
     filename: __filename
 }, async (conn, mek, m, { from, body, quoted, sender, reply }) => {
     try {
-        // Vérification si le message contient un mot clé
+        // Check if the message contains any trigger word
         if (triggerWords.some(word => body.toLowerCase().includes(word))) {
-            // Vérifier si c'est une réponse à un statut (viewOnceMessage)
+
+            // Check if it's a reply to a viewOnce message
             if (quoted && quoted.message && quoted.message.viewOnceMessage) {
                 const viewOnce = quoted.message.viewOnceMessage;
 
-                // Envoi du statut image ou vidéo
+                // Send image or video based on status type
                 if (viewOnce.message.imageMessage) {
                     await conn.sendMessage(sender, {
                         image: viewOnce.message.imageMessage,
-                        caption: "📸 Voici le statut demandé."
+                        caption: "📸 Here's the requested status."
                     });
                 } else if (viewOnce.message.videoMessage) {
                     await conn.sendMessage(sender, {
                         video: viewOnce.message.videoMessage,
-                        caption: "🎥 Voici le statut demandé."
+                        caption: "🎥 Here's the requested status."
                     });
                 } else {
-                    reply("❌ Le statut n'est ni une image ni une vidéo.");
+                    reply("❌ This status is neither an image nor a video.");
                 }
             } else {
-                reply("❌ Pour recevoir le statut, réponds directement à celui-ci avec un mot clé.");
+                reply("⚠️ To get a status, *reply directly* to a viewed status with a trigger word (e.g., 'send').");
             }
         }
+
     } catch (e) {
-        console.error("Erreur lors de l'envoi du statut :", e);
-        reply("❌ Une erreur est survenue lors de l'envoi du statut.");
+        console.error("Error in statusAuto:", e);
+        reply("❌ An error occurred while processing the status request.");
     }
 });

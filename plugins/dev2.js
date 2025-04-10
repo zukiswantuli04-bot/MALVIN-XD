@@ -40,8 +40,8 @@ malvin({
                 footer: 'Contact & Support',
                 buttons: [
                     {
-                        buttonId: `callowner`,
-                        buttonText: { displayText: '📞 Call Owner' },
+                        buttonId: `t.me/malvintech`,
+                        buttonText: { displayText: '📞 Contact Owner' },
                         type: 1
                     },
                     {

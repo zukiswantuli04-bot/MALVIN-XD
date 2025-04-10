@@ -1,71 +1,72 @@
-
-
-
-
-
-
-
-
-
 const fs = require('fs');
 const path = require('path');
 const { CURRENT_STATUS, ALWAYS_ONLINE, FAKE_TYPING } = require('../settings'); 
-const { malvin, commands } = require('../malvin');
+const { malvin } = require('../malvin');
 
-// Commande body
+// Simulate typing presence (body command)
 malvin({
     pattern: 'body',
     react: '📝',
-    desc: 'Sends typing status.',
+    desc: 'Simulate typing status (composing).',
     category: 'tools',
     filename: __filename
-}, async (_conn, _mek, _m, { body, reply }) => {
+}, async (conn, mek, m, { reply }) => {
     if (CURRENT_STATUS === true) {
-        _conn.sendPresenceUpdate('composing', _mek.key.remoteJid);
+        await conn.sendPresenceUpdate('composing', mek.key.remoteJid);
+        reply("✍️ Bot is now simulating typing...");
     } else {
-        _conn.sendPresenceUpdate('available', _mek.key.remoteJid);
+        await conn.sendPresenceUpdate('available', mek.key.remoteJid);
+        reply("✅ Bot is now showing as available.");
     }
 });
 
-// Commande available
+// Set availability presence (available command)
 malvin({
     pattern: 'available',
     react: '🟢',
-    desc: 'Sets bot status as available or unavailable.',
+    desc: 'Set bot availability status.',
     category: 'tools',
     filename: __filename
-}, async (_conn, _mek, _m, { isOwner, reply }) => {
+}, async (conn, mek, m, { reply }) => {
     if (ALWAYS_ONLINE === true) {
-        _conn.sendPresenceUpdate('available', _mek.key.remoteJid);
+        await conn.sendPresenceUpdate('available', mek.key.remoteJid);
+        reply("🟢 Bot status set to *available* (always online).");
     } else {
-        _conn.sendPresenceUpdate('unavailable', _mek.key.remoteJid);
+        await conn.sendPresenceUpdate('unavailable', mek.key.remoteJid);
+        reply("🔴 Bot status set to *unavailable* (offline).");
     }
 });
 
-// Commande composing (fake typing)
+// Simulate typing manually (composing command)
 malvin({
     pattern: 'composing',
     react: '✍️',
-    desc: 'Simulates typing.',
+    desc: 'Manually trigger fake typing status.',
     category: 'tools',
     filename: __filename
-}, async (_conn, _mek, _m, { body, reply }) => {
+}, async (conn, mek, m, { reply }) => {
     if (FAKE_TYPING === true) {
-        _conn.sendPresenceUpdate('composing', _mek.key.remoteJid);
+        await conn.sendPresenceUpdate('composing', mek.key.remoteJid);
+        reply("✍️ Fake typing triggered manually.");
+    } else {
+        reply("❌ Fake typing is disabled in settings.");
     }
 });
 
-// Commande pour afficher l'état du bot
+// Show bot status (status command)
 malvin({
     pattern: 'status',
     react: '⚙️',
-    desc: 'Display the current status of the bot.',
+    desc: 'Display the current bot status settings.',
     category: 'tools',
     filename: __filename
-}, async (_conn, _mek, _m, { reply }) => {
-    let statusMessage = `Bot status:\n`;
-    statusMessage += `Current status: ${CURRENT_STATUS ? 'Active' : 'Inactive'}\n`;
-    statusMessage += `Always online: ${ALWAYS_ONLINE ? 'Yes' : 'No'}\n`;
-    statusMessage += `Fake typing: ${FAKE_TYPING ? 'Enabled' : 'Disabled'}`;
+}, async (conn, mek, m, { reply }) => {
+    const statusMessage = `
+*🤖 Bot Status Settings:*
+
+• Current Status: ${CURRENT_STATUS ? '✅ Active' : '❌ Inactive'}
+• Always Online: ${ALWAYS_ONLINE ? '🟢 Enabled' : '🔴 Disabled'}
+• Fake Typing: ${FAKE_TYPING ? '✍️ Enabled' : '🚫 Disabled'}
+`.trim();
     reply(statusMessage);
 });

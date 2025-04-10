@@ -1,5 +1,6 @@
 const { malvin } = require('../malvin');
 const fetch = require("node-fetch");
+const { getBuffer, fetchJson } = require('../lib/functions');
 
 malvin({
   pattern: "wadp",
@@ -14,7 +15,7 @@ malvin({
     }
 
     // Validate the phone number format (international format)
-    const phoneRegex = /^\+?[1-9]\d{1,14}$/;
+    const phoneRegex = /^\+([1-9]{1,4})?([0-9]{7,15})$/; // More strict validation
     if (!phoneRegex.test(text)) {
       return send("⚠️ *Error*: The number format is incorrect. Please use international format, e.g., +1234567890.");
     }

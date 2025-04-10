@@ -18,7 +18,7 @@ malvin(
             const input = args.join(" "); // Combine the query parts
 
             if (!input) {
-                return reply("Please provide a song name or YouTube URL.\nExample: `.song faded`\nExample: `.song https://youtu.be/UDSYAD1sQuE`");
+                return reply("⚠️ Please provide a song name or YouTube URL.\nExample: `.song faded`\nExample: `.song https://youtu.be/UDSYAD1sQuE`");
             }
 
             let youtubeUrl;
@@ -43,7 +43,7 @@ malvin(
             console.log("API Response:", response.data);
 
             // Check if the API response is valid
-            if (!response.data || !response.data.status || !response.data.BK9 || !response.data.BK9.downloadUrl) {
+            if (!response.data?.status || !response.data?.BK9?.downloadUrl) {
                 return reply("❌ Unable to fetch the song. Please check the URL and try again.");
             }
 
@@ -85,7 +85,7 @@ malvin(
             const input = args.join(" "); // Combine the query parts
 
             if (!input) {
-                return reply("Please provide a video name or YouTube URL.\nExample: `.video lily`\nExample: `.video https://youtu.be/UDSYAD1sQuE`");
+                return reply("⚠️ Please provide a video name or YouTube URL.\nExample: `.video lily`\nExample: `.video https://youtu.be/UDSYAD1sQuE`");
             }
 
             let youtubeUrl;
@@ -110,17 +110,17 @@ malvin(
             console.log("API Response:", response.data);
 
             // Check if the API response is valid
-            if (!response.data || !response.data.status || !response.data.BK9 || !response.data.BK9.BK8) {
+            if (!response.data?.status || !response.data?.BK9?.BK8) {
                 return reply("❌ Unable to fetch the video. Please check the URL and try again.");
             }
 
             // Extract video details
             const { title, BK8 } = response.data.BK9;
 
-            // Find the lowest quality video link
+            // Find the lowest quality video link (or the first available)
             const lowestQualityVideo = BK8.find(video => video.quality && video.format === "mp4") || BK8[0];
 
-            if (!lowestQualityVideo || !lowestQualityVideo.link) {
+            if (!lowestQualityVideo?.link) {
                 return reply("❌ No valid video link found.");
             }
 

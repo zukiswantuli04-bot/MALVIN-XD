@@ -1,52 +1,42 @@
-const {malvin , commands} = require('../malvin')
+const { malvin } = require('../malvin');
 const Jimp = require("jimp");
-var { S_WHATSAPP_NET } = require('@whiskeysockets/baileys');
-const Baileys = require('@whiskeysockets/baileys');
+const { S_WHATSAPP_NET } = require('@whiskeysockets/baileys');
 
 malvin({
     pattern: "pp",
-    desc: "changes profile picture.",
+    desc: "Change the bot's profile picture.",
     category: "owner",
     filename: __filename
-},
-async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
+}, async (conn, mek, m, {
+    quoted,
+    isOwner,
+    reply
+}) => {
 
-try {
-  // Download and save media message
-  let ig = await m.quoted.download();
-  
-  // Read image using Jimp
-  const jimp = await Jimp.read(ig),
-    min = jimp.getWidth(),
-    max = jimp.getHeight(),
-    cropped = jimp.crop(0, 0, min, max);
-  
-  // Process the image
-  const img = await cropped.scaleToFit(720, 720).getBufferAsync(Jimp.MIME_JPEG);
-  const preview = await cropped.normalize().getBufferAsync(Jimp.MIME_JPEG);
+    try {
+        // Only allow owner to use
+        if (!isOwner) return reply("❌ Only the owner can change the bot's profile picture.");
 
-  // Send profile picture update
-  await conn.query({
-    tag: 'iq',
-    attrs: {
-      //target: conn.user.jid,
-      to: S_WHATSAPP_NET,
-      type: 'set',
-      xmlns: 'w:profile:picture',
-    },
-    content: [
-      {
-        tag: 'picture',
-        attrs: { type: 'image' },
-        content: img,
-      },
-    ],
-  });
-  
-  return m.reply( "done"); // Success return value
-} catch (err) {
-  console.error('Error:', err);
-  return err; // Error return value
-}
+        // Check if the user replied to an image
+        if (!quoted || !quoted.message || !quoted.message.imageMessage) {
+            return reply("🖼️ Please reply to an image to set as profile picture.");
+        }
 
-})
+        // Download the image
+        const media = await quoted.download();
+
+        // Process the image with Jimp
+        const image = await Jimp.read(media);
+        const square = image.cover(720, 720); // crop & resize to 720x720
+
+        const jpegImage = await square.getBufferAsync(Jimp.MIME_JPEG);
+
+        // Update profile picture
+        await conn.updateProfilePicture(conn.user.id, jpegImage);
+        
+        await reply("✅ Profile picture updated successfully!");
+    } catch (err) {
+        console.error("Error updating profile picture:", err);
+        return reply("❌ Failed to update profile picture. Make sure the image is valid.");
+    }
+});
