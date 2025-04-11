@@ -39,6 +39,17 @@
       "required": true
       
    },
+   "MENU_IMG": {
+      "description": "paste your image url if you don't have you can use this public url.",
+      "required": false,
+      "value": "https://files.catbox.moe/gld2vo.jpg"
+    }, 
+    
+    "ALIVE_IMG": {
+      "description": "paste your image url if you don't have you can use this public url.",
+      "required": false,
+      "value": "https://files.catbox.moe/ktd1l4.jpg"
+    }, 
     "OWNER_NAME": {
       "description": "Enter your name here",
       "value": "",
