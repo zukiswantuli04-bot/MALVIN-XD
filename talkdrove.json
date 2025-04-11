@@ -50,6 +50,24 @@
       "required": false,
       "value": "https://files.catbox.moe/ktd1l4.jpg"
     }, 
+     "CURRENT_STATUS": {
+      "description": "Make it true for current status.",
+      "required": false,
+      "value": "false"
+    },
+    
+    "AUTO_REACT": {
+      "description": "Make it true if you want react on every message.",
+      "required": false,
+      "value": "false"
+    },
+
+    "OWNER_REACT": {
+      "description": "Make it true if you only want react on Owner Massages.",
+      "required": false,
+      "value": "false"
+      
+    }, 
     "OWNER_NAME": {
       "description": "Enter your name here",
       "value": "",
