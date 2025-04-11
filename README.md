@@ -1,83 +1,107 @@
-<a><img src='https://i.imgur.com/LyHic3i.gif'/>
+
+
 
 <p align="center">
-  <p align="center">
-  <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Bungee+Shade&size=25&pause=1000&background=FF000000&width=435&lines=THIS+IS+MALVIN+XD+V4%20❤️+;MALVIN-+XD-+V3%20🎉;CREATED+BY+MALVIN-KING%20🤴" alt="Typing SVG" /></a>
-  </p>
-  
-<a><img src='https://i.imgur.com/LyHic3i.gif'/>
+  <img src="https://i.imgur.com/LyHic3i.gif" />
+</p>
 
-> **`Updated To` The Version 4.0.0**
-<a><img src='https://i.imgur.com/LyHic3i.gif'/>
+<p align="center">
+  <img src="https://files.catbox.moe/2prjby.jpg" />
+</p>
+  <img src="https://i.imgur.com/LyHic3i.gif" />
+</p>
 
-```
-MALVIN-XD BY Malvin King 🩵
-```
+## 📊 Repo Insights
 
- <a><img src='https://i.imgur.com/LyHic3i.gif'/>
+<p align="center">
+  <img src="https://img.shields.io/github/forks/XdKing2/MALVIN-XD?style=flat&color=6A1B9A&logo=github&logoColor=white&label=Forks" />
+  <img src="https://img.shields.io/github/followers/XdKing2?style=flat&color=E91E63&logo=github&logoColor=white&label=Followers" />
+  <img src="https://img.shields.io/github/last-commit/XdKing2/MALVIN-XD?style=flat&color=FF5252&logo=git&logoColor=white&label=Last%20Commit" />
+  <img src="https://img.shields.io/github/repo-size/XdKing2/MALVIN-XD?style=flat&color=FF7043&logo=database&logoColor=white&label=Repo%20Size" />
+  <img src="https://img.shields.io/github/package-json/v/XdKing2/MALVIN-XD?style=flat&color=FFEB3B&logo=npm&logoColor=black&label=Version" />
+</p>
 
-<a><img src='https://files.catbox.moe/2prjby.jpg'/></a>
+  <img src="https://i.imgur.com/LyHic3i.gif" />
+</p>
 
----
+**MALVIN-XD** is a cutting-edge bot framework built by [Malvin King](https://github.com/XdKing2). Designed for seamless automation, interactive chat capabilities, and easy deployment, it's a perfect choice for developers and bot enthusiasts. 🚀
 
-### 🌟 About MALVIN-XD
-
-MALVIN-XD is a cutting-edge bot framework built by [Malvin King](https://github.com/XdKing2). Designed for seamless automation, interactive chat capabilities, and easy deployment, it's a perfect choice for developers and bot enthusiasts. 🚀
-
----
+  <img src="https://i.imgur.com/LyHic3i.gif" />
+</p>
 
 ### 🏆 Features
+
 - 🚀 **Fast & Reliable** - Built with optimized scripts for efficiency.
 - 🎨 **Customizable** - Tailor it to fit your unique needs.
 - 🔄 **Multiple Deployment Options** - Deploy on **Heroku, Koyeb, TalkDrove, Katabump, and GitHub**.
 - 📌 **User-Friendly Interface** - Simple setup and usage.
 
----
+
+[![Fork MALVIN-XD](https://img.shields.io/badge/Fork-MALVIN--XD-%93FF005C?style=for-the-badge&logo=github&logoColor=white)](https://XdKing2/MALVIN-XD)
+
+  <img src="https://i.imgur.com/LyHic3i.gif" />
+</p>
 
 ### 🚀 Deploy MALVIN-XD
 
-> **Deploy on Heroku**
-<p align="left">  
-<a href='https://dashboard.heroku.com/new?template=https://github.com/XdKing2/MALVIN-XD/tree/main' target="_blank"><img alt='Deploy on Heroku' src='https://img.shields.io/badge/Deploy%20on-Heroku-FF004D?style=for-the-badge&logo=heroku&logoColor=white'/></a>  
-</p>
 
-> **Deploy on Koyeb**
-<p align="left">  
-<a href='https://app.koyeb.com/services/deploy?type=git&repository=XdKing2/MALVIN-XD&ports=3000' target="_blank"><img alt='Deploy on Koyeb' src='https://img.shields.io/badge/Deploy%20on-Koyeb-FF009D?style=for-the-badge&logo=koyeb&logoColor=white'/></a>  
-</p>
+[![Launch MALVIN-XD](https://img.shields.io/badge/Launch-MALVIN--XD-%23FF005C?style=for-the-badge&logo=githubactions&logoColor=white)](https://malvin-pair-j60i.onrender.com/)
+
+
+
 
 ---
 
 ### 📥 Get MALVIN-XD
 
-> **Download the bot file**
-<p align="left">  
-<a href='https://github.com/XdKing2/MALVIN-XD/archive/refs/heads/main.zip' target="_blank"><img alt='Download Bot File' src='https://img.shields.io/badge/Download%20Bot-file-FF009D?style=for-the-badge&logo=github&logoColor=white'/></a>  
-</p>
+[![Download Bot File](https://img.shields.io/badge/Download%20Bot-file-FF009D?style=for-the-badge&logo=github&logoColor=white)](https://github.com/XdKing2/MALVIN-XD/archive/refs/heads/main.zip)
 
----
+  <img src="https://i.imgur.com/LyHic3i.gif" />
+</p>
 
 ### ⚠️ Disclaimer
 
-- 🔒 This bot is **not affiliated with WhatsApp Inc.** Use it responsibly.
-- 🚨 **Misuse may lead to account bans.**
+- 🔒 This bot is **not affiliated with WhatsApp Inc.** Use it responsibly.  
+- 🚨 **Misuse may lead to account bans.**  
 - ❌ **Cloning or modifying the bot without permission is prohibited.**
 
----
+  <img src="https://i.imgur.com/LyHic3i.gif" />
+</p>
 
 ### 💡 Credits & Contributors
 
-> **MALVIN XD Owner**
-- [Malvin King](https://github.com/XdKing2) - **Creator & Maintainer**
+> **MALVIN XD Owner**  
+- [Malvin King](https://github.com/XdKing2) - **Creator & Maintainer**  
 - Contributions include **bot plugins, command files, and script optimizations.**
 
----
 
-### 🔥 Stay Connected
 
-📢 **Join our [WhatsApp Channel](https://whatsapp.com/channel/0029VbA6MSYJUM2TVOzCSb2A)** for updates!
+  <img src="https://i.imgur.com/LyHic3i.gif" />
+</p>
 
-📌 **Facing issues?** Drop your concerns in the **YouTube comments** or **WhatsApp community.**
+### 🔥 Stay Connected with the MALVIN-XD Universe
 
-**Happy coding! 🚀**
+> **Power up your dev journey – don’t miss updates, guides, or new commands!**
+
+<p align="left">
+  
+- **📢 WhatsApp Channel** – Get instant updates, feature drops & dev alerts.
+  
+  [![WhatsApp Channel](https://img.shields.io/badge/Join%20WhatsApp-Channel-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://whatsapp.com/channel/0029VbA6MSYJUM2TVOzCSb2A)  
+
+- **▶️ YouTube: MalvinTech** – Watch tutorials, pro tricks, and setup walkthroughs.  
+[![YouTube Channel](https://img.shields.io/badge/Subscribe-YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/@malvintech2)
+
+</p>
+
+
+
+- **❓ Have Questions?** – Drop comments on YouTube or ping us in the WhatsApp community.
+
+> ⚔️ *Join the MALVIN-XD squad. Anime vibes. Dev pride. Future-coded.*  
+
+**Stay legendary, coder. Happy hacking!** 🚀
+
+  <img src="https://i.imgur.com/LyHic3i.gif" />
+</p>
 
