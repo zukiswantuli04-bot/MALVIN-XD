@@ -20,47 +20,58 @@
   <img src="https://i.imgur.com/LyHic3i.gif" />
 </p>
 
-**MALVIN-XD** is a cutting-edge bot framework built by [Malvin King](https://github.com/XdKing2).  
-Designed for seamless automation, interactive chat capabilities, and easy deployment, it's a perfect choice for developers and bot enthusiasts. 🚀
+### 1. Fork This Repository
 
-<p align="center">
-  <img src="https://i.imgur.com/LyHic3i.gif" />
+Start by forking this repository to your own GitHub account. Click the button below to fork:
+
+  <a href="https://github.com/XdKing2/MALVIN-XD/fork"><img title="MALVIN-XD" src="https://img.shields.io/badge/FORK-MALVIN XD-h?color=blue&style=for-the-badge&logo=stackshare"></a>
+
+> Get Pair Code (Session ID)
+
+<p align="left">  
+<a href='https://malvinpair.onrender.com/pair' target="_blank"><img alt='Get Pairing Code' src='https://img.shields.io/badge/Get%20Pairing%20Code-000000?style=for-the-badge&logo=codefactor&logoColor=white'/></a>  
+</p>  
+
+> Get Pair Code ( Creds.json)
+
+<p align="left">  
+<a href='https://jawadmdx.onrender.com' target="_blank"><img alt='Get Pairing Code' src='https://img.shields.io/badge/Get%20Pairing%20Code-ff0000?style=for-the-badge&logo=codefactor&logoColor=white'/></a>  
+</p>  
+
+
+🚀 Deploy MALVIN-XD
+
+> Deploy on Heroku
+
+
+
+<p align="left">  
+<a href='https://dashboard.heroku.com/new?template=https://github.com/XdKing3/none/tree/main' target="_blank"><img alt='Deploy on Heroku' src='https://img.shields.io/badge/Deploy%20on-Heroku-FF004D?style=for-the-badge&logo=heroku&logoColor=white'/></a>  
 </p>
 
-### 🏆 Features
+> Deploy on TaikDrove
 
-- 🚀 **Fast & Reliable** - Built with optimized scripts for efficiency  
-- 🎨 **Customizable** - Tailor it to fit your unique needs  
-- 🔄 **Multiple Deployment Options** - Deploy on **Heroku, Koyeb, TalkDrove, Katabump, and GitHub**  
-- 📌 **User-Friendly Interface** - Simple setup and usage  
 
-<p align="center">
-  <a href="https://github.com/XdKing2/MALVIN-XD/fork">
-    <img src="https://img.shields.io/badge/Fork-MALVIN--XD-%2393FF005C?style=for-the-badge&logo=github&logoColor=white" />
-  </a>
+
+<p align="left">  
+<a href='https://host.talkdrove.com/' target="_blank"><img alt='Deploy on TaikDrove' src='https://img.shields.io/badge/Deploy%20on-TaikDrove-6971FF?style=for-the-badge&logo=google-cloud&logoColor=white'/></a>  
 </p>
 
-<p align="center">
-  <img src="https://i.imgur.com/LyHic3i.gif" />
+> Deploy on Koyeb
+
+
+
+<p align="left">  
+<a href='https://app.koyeb.com/services/deploy?type=git&repository=XdKing3/none&ports=3000' target="_blank"><img alt='Deploy on Koyeb' src='https://img.shields.io/badge/Deploy%20on-Koyeb-FF009D?style=for-the-badge&logo=koyeb&logoColor=white'/></a>  
 </p>
 
-### ⚙️ If pair session from Deploy Site is not working:
+> View Workflow Codes
 
-1. Use the `creds.json` file you receive after pairing  
-2. Enter your phone number and get the code  
-3. You will receive a `creds.json` file  
-4. Upload it to the **session** folder
 
-[![USE CREDS.JSON](https://img.shields.io/badge/creds-Pair-%2393FF005C?style=for-the-badge&logo=github&logoColor=white)](https://sahas-md-pair-web-ibx9.onrender.com/)
 
-<p align="center">
-  <img src="https://i.imgur.com/LyHic3i.gif" />
-</p>
-
-### 🚀 Deploy MALVIN-XD
-
-[![Launch MALVIN-XD](https://img.shields.io/badge/Launch-MALVIN--XD-%23FF005C?style=for-the-badge&logo=githubactions&logoColor=white)](https://malvin-pair-j60i.onrender.com/)
-
+<p align="left">  
+<a href="https://whatsapp.com/channel/0029VbA6MSYJUM2TVOzCSb2A/1368" target="_blank"><img alt='View Workflow Codes' src='https://img.shields.io/badge/View-Workflow%20Codes-FF0076?style=for-the-badge&logo=githubactions&logoColor=white'/></a>  
+</p>  
 ---
 
 ### 📥 Get MALVIN-XD
