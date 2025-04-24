@@ -68,7 +68,7 @@ const {
   //===================SESSION-AUTH============================
 if (!fs.existsSync(__dirname + '/sessions/creds.json')) {
 if(!config.SESSION_ID) return console.log('⛔️ Please add your session to SESSION_ID env !!')
-const sessdata = config.SESSION_ID.replace("MALVIN~", '');
+const sessdata = config.SESSION_ID.replace("malvin~", '');
 const filer = File.fromURL(`https://mega.nz/file/${sessdata}`)
 filer.download((err, data) => {
 if(err) throw err
@@ -110,13 +110,8 @@ console.log("[ ❄️ ] Session downloaded ✅")
             }
         } else if (connection === 'open') {
             console.log('[ ❄️ ] Installing MALVIN XD Plugins...');
-
-            // Load verification middleware ONCE
-            const { malvin } = require('./malvin');
-            const { checkUserVerification } = require('./plugins/verify'); // adjust path if needed
-            malvin.use(checkUserVerification);
-
-            // Load plugins
+                   
+             // Load plugins
             const path = require('path');
             fs.readdirSync("./plugins/").forEach((plugin) => {
                 if (path.extname(plugin).toLowerCase() === ".js") {
