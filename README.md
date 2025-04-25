@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img src="https://files.catbox.moe/2prjby.jpg" />
+  <img src="https://files.catbox.moe/juxfce.jpg" />
 </p>
 
 ## 📊 Repo Insights
