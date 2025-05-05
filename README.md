@@ -46,10 +46,12 @@ Start by forking this repository to your own GitHub account. Click the button be
   
 > **PAIRiNG APP (All)**
   <a href='https://new-session-m3jx.onrender.com/' target="_blank">
-    <img src='https://img.shields.io/badge/PAIR_CODE_2-FF00FF?style=for-the-badge&logo=matrix&logoColor=white&labelColor=000000'/>
+    <img src='https://img.shields.io/badge/Pair_App-FF00FF?style=for-the-badge&logo=matrix&logoColor=white&labelColor=000000'/>
   </a>
   
 ### 📥 Get MALVIN-XD
+
+> Download bot file for panel deployments
 
 [![Download Bot File](https://img.shields.io/badge/Download%20Bot-file-FF009D?style=for-the-badge&logo=github&logoColor=white)](https://github.com/XdKing2/MALVIN-XD/archive/refs/heads/main.zip)
 
