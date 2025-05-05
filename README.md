@@ -112,12 +112,18 @@ Start by forking this repository to your own GitHub account. Click the button be
 ---
 
 ## 🗃️ PROJECT ARCHITECTS
-<div align="center">
-  <a href="https://github.com/XdKing2">
-    <img src="https://github-readme-stats.vercel.app/api?username=XdKing2&show_icons=true&theme=dark&border_color=00ffff&title_color=00ffff&icon_color=00ffff" width="400"/>
-  </a>
-</div>
 
+<p align="center">
+  <a href="https://github.com/XdKing2">
+    <img src="https://github-readme-stats.vercel.app/api?username=XdKing2&show_icons=true&theme=radical">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/XdKing2">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=XdKing2&theme=radical&layout=compact">
+  </a>
+</p>
 <div align="center">
   <img src="https://github.com/XdKing2/MALVIN-XD/blob/main/assets/futuretech.gif?raw=true" width="100%"/>
 </div>
