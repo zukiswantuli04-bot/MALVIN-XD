@@ -6,7 +6,7 @@ const axios = require('axios')
 
 malvin({
     pattern: "menu2",
-    alias: ["allmenu","fullmenu"],
+    alias: ["allmenu","list"],
     use: '.menu2',
     desc: "Show all bot commands",
     category: "menu",
