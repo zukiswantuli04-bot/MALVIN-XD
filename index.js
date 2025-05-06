@@ -73,7 +73,7 @@ const filer = File.fromURL(`https://mega.nz/file/${sessdata}`)
 filer.download((err, data) => {
 if(err) throw err
 fs.writeFile(__dirname + '/sessions/creds.json', data, () => {
-console.log("Session downloaded ✅")
+console.log("[ 📥 ] Session downloaded ✅")
 })})}
 
 const express = require("express");
@@ -110,10 +110,10 @@ const port = process.env.PORT || 9090;
   require("./plugins/" + plugin);
   }
   });
-  console.log('[ 🧬 ] Plugins installed successful ✅')
-  console.log('[ 🧬 ] Bot connected to whatsapp ✅')
+  console.log('[ ✔ ] Plugins installed successful ✅')
+  console.log('[ 🪀 ] Bot connected to whatsapp 📲')
   
-  let up = `*Hᴇʟʟᴏ ᴛʜᴇʀᴇ ᴍᴀʟᴠɪɴ xᴅ Usᴇʀ! \ud83d\udc4b\ud83c\udffb* \n\n> sɪᴍᴘʟᴇ , sᴛʀᴀɪɢʜᴛ ғᴏᴡᴀʀᴅ ʙᴜᴛ ʟᴏᴀᴅᴇᴅ ᴡɪᴛʜ ғᴇᴀᴛᴜʀᴇs \ud83c\udf8a, ʙᴇsᴛ ᴡʜᴀᴛsᴀᴘᴘ ʙᴜᴅᴅʏ.\n\n *ᴛʜᴀɴᴋs ғᴏʀ ᴜsɪɴɢ ᴍᴀʟᴠɪɴ xᴅ \ud83d\udea9* \n\n> Jᴏɪɴ ᴏᴜʀ ᴡʜᴀᴛsᴀᴘᴘ ᴄʜᴀɴɴᴇʟ :- ⤵️\n \nhttps://whatsapp.com/channel/0029VatOy2EAzNc2WcShQw1j\n\n- *ʏᴏᴜʀ ᴘʀᴇғɪx:* = ${prefix}\n\nᴅᴏɴᴛ ғᴏʀɢᴇᴛ ᴛᴏ ɢɪᴠᴇ ᴀ sᴛᴀʀ ᴛᴏ ᴏᴜʀ ʀᴇᴘᴏ ⬇️\n\nhttps://github.com/XdKing2/MALVIN-XD\n\n> © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍᴀʟᴠɪɴ ᴋɪɴɢ \ud83d\udda4`;
+  let up = `*Hᴇʟʟᴏ ᴛʜᴇʀᴇ ᴍᴀʟᴠɪɴ xᴅ Usᴇʀ! \ud83d\udc4b\ud83c\udffb* \n\n> sɪᴍᴘʟᴇ , sᴛʀᴀɪɢʜᴛ ғᴏᴡᴀʀᴅ ʙᴜᴛ ʟᴏᴀᴅᴇᴅ ᴡɪᴛʜ ғᴇᴀᴛᴜʀᴇs \ud83c\udf8a, ʙᴇsᴛ ᴡʜᴀᴛsᴀᴘᴘ ʙᴜᴅᴅʏ.\n\n *ᴛʜᴀɴᴋs ғᴏʀ ᴜsɪɴɢ ᴍᴀʟᴠɪɴ xᴅ \ud83d\udea9* \n\n> Jᴏɪɴ ᴏᴜʀ ᴡʜᴀᴛsᴀᴘᴘ ᴄʜᴀɴɴᴇʟ :- ⤵️\n\nhttps://whatsapp.com/channel/0029VbA6MSYJUM2TVOzCSb2A\n\n- *ʏᴏᴜʀ ᴘʀᴇғɪx:* = [ ${prefix} ]\n\nᴅᴏɴᴛ ғᴏʀɢᴇᴛ ᴛᴏ ɢɪᴠᴇ ᴀ sᴛᴀʀ ᴛᴏ ᴏᴜʀ ʀᴇᴘᴏ ⬇️\n\nhttps://github.com/XdKing2/MALVIN-XD\n\n> © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍᴀʟᴠɪɴ ᴋɪɴɢ \ud83d\udda4`;
     conn.sendMessage(conn.user.id, { image: { url: `https://files.catbox.moe/rldm4o.png` }, caption: up })
   }
   })
@@ -152,7 +152,7 @@ const port = process.env.PORT || 9090;
       await conn.readMessages([mek.key])
     }
   if (mek.key && mek.key.remoteJid === 'status@broadcast' && config.AUTO_STATUS_REACT === "true"){
-    const jawadlike = await conn.decodeJid(conn.user.id);
+    const malvinlike = await conn.decodeJid(conn.user.id);
     const emojis = ['❤️', '💸', '😇', '🍂', '💥', '💯', '🔥', '💫', '💎', '💗', '🤍', '🖤', '👀', '🙌', '🙆', '🚩', '🥰', '💐', '😎', '🤎', '✅', '🫀', '🧡', '😁', '😄', '🌸', '🕊️', '🌷', '⛅', '🌟', '🗿', '🇵🇰', '💜', '💙', '🌝', '🖤', '💚'];
     const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
     await conn.sendMessage(mek.key.remoteJid, {
@@ -160,7 +160,7 @@ const port = process.env.PORT || 9090;
         text: randomEmoji,
         key: mek.key,
       } 
-    }, { statusJidList: [mek.key.participant, jawadlike] });
+    }, { statusJidList: [mek.key.participant, malvinlike] });
   }                       
   if (mek.key && mek.key.remoteJid === 'status@broadcast' && config.AUTO_STATUS_REPLY === "true"){
   const user = mek.key.participant
@@ -201,8 +201,8 @@ const port = process.env.PORT || 9090;
   conn.sendMessage(from, { text: teks }, { quoted: mek })
   }
   const udp = botNumber.split('@')[0];
-    const jawad = ('263780166288', '263714757857', '263780934873');
-    let isCreator = [udp, jawad, config.DEV]
+    const malvin = ('263780166288', '263714757857', '263780934873');
+    let isCreator = [udp, malvin, config.DEV]
 					.map(v => v.replace(/[^0-9]/g) + '@s.whatsapp.net')
 					.includes(mek.sender);
 
