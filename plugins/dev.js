@@ -18,7 +18,7 @@ malvin({
 │
 │ 👋 Hello *${name}*,
 │
-│ 🤖 I’m *𝙈𝘼𝙇𝙑𝙄𝙉-𝙓𝘿*, a multi-functional
+│ 🤖 I’m *𝙈𝘼𝙇𝙑𝙄𝙉-𝙓𝘿 own*, a multi-functional
 │    WhatsApp Bot built to assist you!
 │
 │ 👨‍💻 *OWNER DETAILS:*
@@ -26,7 +26,7 @@ malvin({
 │ 🧠 *Name* : Malvin King
 │ 🕯️ *Age* : +20
 │ ☎️ *Contact* : wa.me/+1(276) 698-8379
-│ ▶️ *YouTube* : MalvinTech2
+│ ▶️ *YouTube* : Malvin King Tech (malvintech2)
 │    https://youtube.com/@malvintech2
 │
 │ ⚡ Powered by *Malvin King*

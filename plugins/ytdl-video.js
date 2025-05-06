@@ -4,7 +4,7 @@ const yts = require('yt-search');
 
 malvin({
     pattern: "video2",
-    alias: ["mp4", "song"],
+    alias: ["vid", "video2"],
     react: "🎥",
     desc: "Download video from YouTube",
     category: "download",

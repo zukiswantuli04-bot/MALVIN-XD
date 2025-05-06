@@ -6,7 +6,7 @@ const axios = require('axios')
 
 malvin({
     pattern: "menu2",
-    alias: ["allmenu","list"],
+    alias: ["allmenu","fullmenu"],
     use: '.menu2',
     desc: "Show all bot commands",
     category: "menu",
@@ -181,6 +181,8 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ┆ ◦  🏓 ping
 ┆ ◦  🆔 gjid
 ┆ ◦  🆔 jid
+┆ ◦  📖 bible
+┆ ◦  📖 biblelist /blist
 ┆ ◦ 
 ╰─┈⊷
 
@@ -234,6 +236,8 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ┆ ◦  🔁 repeat
 ┆ ◦  ❓ ask
 ┆ ◦  📖 readmore
+┆ ◦  💚 help
+┆ ◦  💚 support
 ┆ ◦ 
 ╰─┈⊷
 
