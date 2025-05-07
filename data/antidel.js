@@ -85,4 +85,4 @@ module.exports = {
     getAllAntiDeleteSettings,
 };
 
-// by Malvin King 
+// by Malvin King 🤴 ✨️ 
