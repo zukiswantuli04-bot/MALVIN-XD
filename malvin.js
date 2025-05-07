@@ -1,6 +1,6 @@
 var commands = [];
 
-function malvin(info, func) {
+function cmd(info, func) {
     var data = info;
     data.function = func;
     if (!data.dontAddCommandList) data.dontAddCommandList = false;
@@ -12,9 +12,9 @@ function malvin(info, func) {
     return data;
 }
 module.exports = {
-    malvin,
-    AddCommand:malvin,
-    Function:malvin,
-    Module:malvin,
+    cmd,
+    AddCommand:cmd,
+    Function:cmd,
+    Module:cmd,
     commands,
 };
