@@ -4,9 +4,9 @@
   "description": "A WhatsApp Bot Created By Malvin King",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --name malvin",
-    "stop": "pm2 stop malvin",
-    "restart": "pm2 restart malvin"
+    "start": "pm2 start index.js --deep-monitoring --attach --name MALVIN-XD",
+    "stop": "pm2 stop MALVIN-XD",
+    "restart": "pm2 restart MALVIN-XD"
   },
   "dependencies": {
     "@whiskeysockets/baileys": "npm:@fizzxydev/baileys-pro@8.5.12",
