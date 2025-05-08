@@ -50,109 +50,96 @@ To start, fork this repository to your own GitHub account by clicking the button
     <a href="https://taira-web-service.onrender.com/pair/" target="_blank"><img src="https://img.shields.io/badge/creds.json-ff0000?style=for-the-badge&logo=vercel&logoColor=white" alt="Get Pairing Code (creds.json)" /></a>
   </p>
 
----
-
 <p align="center">
   <img src="https://i.imgur.com/LyHic3i.gif" />
 </p>
 
----
+- **Session App**  
+  <p align="left">
+    <a href="[https://new-session-m3jx.onrender.com/" target="_blank"><img src="https://img.shields.io/badge/Session%20App-000000?style=for-the-badge&logo=react&logoColor=white" alt="Get Pairing Code (Session ID)" /></a>
+  </p>
 
-### 🔄 PAIRiNG APP (All)
 
-Pair your app using the link below:
 
-<a href="https://new-session-m3jx.onrender.com/" target="_blank"><img src="https://img.shields.io/badge/Pair_App-8E24AA?style=for-the-badge&logo=matrix&logoColor=white&labelColor=000000" alt="Pair App" /></a>
 
----
-
-### 📥 Download MALVIN-XD
-
-Download the bot file for panel deployments here:
-
-<a href="https://github.com/XdKing2/MALVIN-XD/archive/refs/heads/main.zip"><img src="https://img.shields.io/badge/Download%20Bot%20File-FF009D?style=for-the-badge&logo=github&logoColor=white" alt="Download Bot File" /></a>
 
 <p align="center">
-  <img src="https://i.imgur.com/LyHic3i.gif" />
+  <img src="https://i.imgur.com/LyHic3i.gif" width="65%" />
 </p>
 
-<p align="center" style="color: #aaaaaa; font-size: 12px; margin-top: 10px;">
-  <img src="https://github.com/XdKing2/MALVIN-XD/blob/main/assets/warning.gif?raw=true" width="15" />  
-  **Connection issues may require VPN activation.**
+<p align="center" style="color:#777;font-size:13px;">
+  <img src="https://github.com/XdKing2/MALVIN-XD/blob/main/assets/warning.gif?raw=true" width="15" />
+  <em>Having connection issues? Try using a VPN.</em>
 </p>
-
 
 
 <div align="center">
   <img src="https://github.com/XdKing2/MALVIN-XD/blob/main/assets/techwave.gif?raw=true" width="80%"/>
 </div>
 
-<!-- 📡 DEPLOYMENT OPTIONS -->
-<h2 align="center">📡 DEPLOYMENT OPTIONS</h2>
+<h2 align="center">🚀 Deployment Options</h2>
 
 <div align="center">
+  <table cellspacing="20">
+    <tr>
+      <td align="center">
+        <a href="https://dashboard.heroku.com/new?template=https://github.com/XdKing2/MALVIN-XD" target="_blank">
+          <img src="https://img.shields.io/badge/Deploy%20to-Heroku-7A3E9D?style=for-the-badge&logo=heroku&logoColor=white" alt="Heroku"/>
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://app.koyeb.com/services/deploy?type=git&repository=XdKing3/MALVIN-XD" target="_blank">
+          <img src="https://img.shields.io/badge/Deploy%20to-Koyeb-FF2D95?style=for-the-badge&logo=koyeb&logoColor=white" alt="Koyeb"/>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <a href="https://railway.app/new" target="_blank">
+          <img src="https://img.shields.io/badge/Deploy%20to-Railway-121212?style=for-the-badge&logo=railway&logoColor=white" alt="Railway"/>
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://dashboard.render.com/web/new" target="_blank">
+          <img src="https://img.shields.io/badge/Deploy%20to-Render-00C7A9?style=for-the-badge&logo=render&logoColor=white" alt="Render"/>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <a href="https://app.netlify.com/" target="_blank">
+          <img src="https://img.shields.io/badge/Deploy%20to-Netlify-00ADB5?style=for-the-badge&logo=netlify&logoColor=white" alt="Netlify"/>
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://talkdrove.com" target="_blank">
+          <img src="https://img.shields.io/badge/Deploy%20via-TalkDrove-6B47FF?style=for-the-badge&logo=github&logoColor=white" alt="TalkDrove"/>
+        </a>
+      </td>
+    </tr>
+  </table>
 
-<!-- Deployment Badges Table -->
-<table cellspacing="20">
-  <tr>
-    <td align="center">
-      <a href="https://dashboard.heroku.com/new?template=https://github.com/XdKing2/MALVIN-XD" target="_blank" title="One‑click Heroku deploy">
-        <img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white&labelColor=000000&color=00ffff" alt="Heroku"/>
-      </a>
-      <div>Heroku</div>
-    </td>
-    <td align="center">
-      <a href="https://app.koyeb.com/services/deploy?type=git&repository=XdKing3/MALVIN-XD" target="_blank" title="Deploy on Koyeb">
-        <img src="https://img.shields.io/badge/Koyeb-FF009D?style=for-the-badge&logo=koyeb&logoColor=white&labelColor=000000" alt="Koyeb"/>
-      </a>
-      <div>Koyeb</div>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <a href="https://railway.app/new" target="_blank" title="Spin up on Railway">
-        <img src="https://img.shields.io/badge/Railway-FF8700?style=for-the-badge&logo=railway&logoColor=white&labelColor=000000" alt="Railway"/>
-      </a>
-      <div>Railway</div>
-    </td>
-    <td align="center">
-      <a href="https://dashboard.render.com/web/new" target="_blank" title="Instant Render web service">
-        <img src="https://img.shields.io/badge/Render-00ffaa?style=for-the-badge&logo=render&logoColor=white&labelColor=000000" alt="Render"/>
-      </a>
-      <div>Render</div>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <a href="https://app.netlify.com/" target="_blank" title="Host on Netlify (free TLS + CDN)">
-        <img src="https://img.shields.io/badge/Netlify-CC00FF?style=for-the-badge&logo=netlify&logoColor=white&labelColor=000000" alt="Netlify"/>
-      </a>
-      <div>Netlify</div>
-    </td>
-    <td align="center">
-      <a href="https://talkdrove.com" target="_blank" title="Deploy via TalkDrove">
-        <img src="https://img.shields.io/badge/TalkDrove-6971FF?style=for-the-badge&logo=github&logoColor=white&labelColor=000000" alt="TalkDrove"/>
-      </a>
-      <div>TalkDrove</div>
-    </td>
-  </tr>
-</table>
+  <p align="center">
+    <a href="https://whatsapp.com/channel/0029VbA6MSYJUM2TVOzCSb2A" target="_blank">
+      <img src="https://img.shields.io/badge/View_Workflows-90D366?style=for-the-badge&logo=git&logoColor=blue" alt="Workflow Codes"/>
+    </a>
+  </p>
 
-<!-- Workflow Codes CTA -->
-<p align="center">
-  <a href="https://whatsapp.com/channel/0029VbA6MSYJUM2TVOzCSb2A" target="_blank" title="View workflow codes on WhatsApp">
-    <img src="https://img.shields.io/badge/View-Workflow%20Codes-FF0076?style=for-the-badge&logo=githubactions&logoColor=white" alt="View Workflow Codes"/>
-  </a>
-</p>
-
-<!-- Decorative Animation -->
-<p align="center">
-  <img src="https://github.com/XdKing2/MALVIN-XD/blob/main/assets/techwave.gif?raw=true" width="100%" alt="Techwave Animation"/>
-</p>
-
+  <img src="https://github.com/XdKing2/MALVIN-XD/blob/main/assets/techwave.gif?raw=true" width="100%" alt="Divider"/>
 </div>
+<p align="center">
+  <img src="https://i.imgur.com/LyHic3i.gif" width="100%" />
+</p>
 
+## 📦 Download MALVIN‑XD file
 
+> Get the latest bot zip file for panel deployment:
+
+[![Download ZIP](https://img.shields.io/badge/Download_MALVIN--XD-FF5722?style=flat-square&logo=github&logoColor=white)](https://github.com/XdKing2/MALVIN-XD/archive/refs/heads/main.zip)
+
+<p align="center">
+  <img src="https://i.imgur.com/LyHic3i.gif" width="100%" />
+</p>
 
 ### ⚠️ Disclaimer
 
@@ -167,12 +154,6 @@ Download the bot file for panel deployments here:
 <p align="center">
   <a href="https://github.com/XdKing2">
     <img src="https://github-readme-stats.vercel.app/api?username=XdKing2&show_icons=true&theme=radical">
-  </a>
-</p>
-
-<p align="center">
-  <a href="https://github.com/XdKing2">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=XdKing2&theme=radical&layout=compact">
   </a>
 </p>
 <div align="center">
