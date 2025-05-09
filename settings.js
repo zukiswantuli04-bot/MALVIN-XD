@@ -40,7 +40,7 @@ MODE: process.env.MODE || "public",
       MENTION_REPLY: process.env.MENTION_REPLY || "false",
 // make true if want auto voice reply if someone menetion you 
 
-     MENU_IMAGE_URL: process.env.MENU_IMAGE_URL || "https://files.catbox.moe/1wlkgh.png",
+     MENU_IMAGE_URL: process.env.MENU_IMAGE_URL || "https://files.catbox.moe/qumhu4.jpg",
 // add custom menu and mention reply image url
 
        ALIVE_IMG: process.env.ALIVE_IMG || "https://files.catbox.moe/xshsmk",
