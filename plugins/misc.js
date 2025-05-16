@@ -9,64 +9,50 @@ initializeAntiDeleteSettings();
 malvin({
     pattern: "antidelete",
     alias: ['antidel', 'ad'],
-    desc: "Sets up the Antidelete",
+    desc: "Configure AntiDelete settings",
     category: "misc",
     filename: __filename
 },
-async (conn, mek, m, { from, reply, q, text, isCreator, fromMe }) => {
-    if (!isCreator) return reply('This command is only for the bot owner');
+async (conn, mek, m, { reply, q, isCreator }) => {
+    if (!isCreator) return reply('⚠️ This command is only for the *bot owner*!');
+
+    const option = q?.trim();
+
     try {
-        const command = q?.toLowerCase();
-
-        switch (command) {
-            case 'on':
-                await setAnti('gc', false);
-                await setAnti('dm', false);
-                return reply('_AntiDelete is now off for Group Chats and Direct Messages._');
-
-            case 'off gc':
-                await setAnti('gc', false);
-                return reply('_AntiDelete for Group Chats is now disabled._');
-
-            case 'off dm':
-                await setAnti('dm', false);
-                return reply('_AntiDelete for Direct Messages is now disabled._');
-
-            case 'set gc':
-                const gcStatus = await getAnti('gc');
-                await setAnti('gc', !gcStatus);
-                return reply(`_AntiDelete for Group Chats ${!gcStatus ? 'enabled' : 'disabled'}._`);
-
-            case 'set dm':
-                const dmStatus = await getAnti('dm');
-                await setAnti('dm', !dmStatus);
-                return reply(`_AntiDelete for Direct Messages ${!dmStatus ? 'enabled' : 'disabled'}._`);
-
-            case 'set all':
+        switch (option) {
+            case '1':
                 await setAnti('gc', true);
                 await setAnti('dm', true);
-                return reply('_AntiDelete set for all chats._');
+                return reply('✅ _AntiDelete is now enabled globally for Group Chats and Direct Messages._');
 
-            case 'status':
-                const currentDmStatus = await getAnti('dm');
-                const currentGcStatus = await getAnti('gc');
-                return reply(`_AntiDelete Status_\n\n*DM AntiDelete:* ${currentDmStatus ? 'Enabled' : 'Disabled'}\n*Group Chat AntiDelete:* ${currentGcStatus ? 'Enabled' : 'Disabled'}`);
+            case '2':
+                await setAnti('gc', false);
+                await setAnti('dm', true);
+                return reply('✅ _AntiDelete is enabled for Direct Messages only._');
+
+            case '3':
+                await setAnti('gc', true);
+                await setAnti('dm', false);
+                return reply('✅ _AntiDelete is enabled for Group Chats only._');
+
+            case '4':
+                await setAnti('gc', false);
+                await setAnti('dm', false);
+                return reply('❌ _AntiDelete is now completely disabled._');
 
             default:
-                const helpMessage = `-- *AntiDelete Command Guide: --*
-                • \`\`.antidelete on\`\` - Reset AntiDelete for all chats (disabled by default)
-                • \`\`.antidelete off gc\`\` - Disable AntiDelete for Group Chats
-                • \`\`.antidelete off dm\`\` - Disable AntiDelete for Direct Messages
-                • \`\`.antidelete set gc\`\` - Toggle AntiDelete for Group Chats
-                • \`\`.antidelete set dm\`\` - Toggle AntiDelete for Direct Messages
-                • \`\`.antidelete set all\`\` - Enable AntiDelete for all chats
-                • \`\`.antidelete status\`\` - Check current AntiDelete status`;
-
-                return reply(helpMessage);
+                return reply(
+                    `🛡️ *AntiDelete Setup*\n\n` +
+                    `Reply With:\n\n` +
+                    `*1.* To Enable For All\n` +
+                    `*2.* To Enable for Chats Only\n` +
+                    `*3.* To Enable for Chats & Groups\n` +
+                    `*4.* To Disable Antidelete`
+                );
         }
-    } catch (e) {
-        console.error("Error in antidelete command:", e);
-        return reply("An error occurred while processing your request.");
+    } catch (err) {
+        console.error('AntiDelete Error:', err);
+        return reply('❌ An unexpected error occurred. Please try again later.');
     }
 });
 
