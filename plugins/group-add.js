@@ -9,38 +9,42 @@ malvin({
     filename: __filename
 },
 async (conn, mek, m, {
-    from, q, isGroup, isBotAdmins, reply, quoted, senderNumber
+    from, isGroup, isBotAdmins, reply, quoted, senderNumber, args
 }) => {
-    // Check if the command is used in a group
+
+    // Must be in group
     if (!isGroup) return reply("❌ This command can only be used in groups.");
 
-    // Get the bot owner's number dynamically from conn.user.id
+    // Owner-only control
     const botOwner = conn.user.id.split(":")[0];
-    if (senderNumber !== botOwner) {
-        return reply("❌ Only the bot owner can use this command.");
-    }
+    if (senderNumber !== botOwner) return reply("❌ Only the bot owner can use this command.");
 
-    // Check if the bot is an admin
-    if (!isBotAdmins) return reply("❌ I need to be an admin to use this command.");
+    // Bot must be admin
+    if (!isBotAdmins) return reply("❌ I need to be an admin to add members.");
 
     let number;
-    if (m.quoted) {
-        number = m.quoted.sender.split("@")[0]; // If replying to a message, get the sender's number
-    } else if (q && q.includes("@")) {
-        number = q.replace(/[@\s]/g, ''); // If manually typing a number with '@'
-    } else if (q && /^\d+$/.test(q)) {
-        number = q; // If directly typing a number
+
+    // Extract number from quoted, mention, or args
+    if (quoted) {
+        number = quoted.sender.split("@")[0];
+    } else if (m.mentionedJid?.length) {
+        number = m.mentionedJid[0].split("@")[0];
+    } else if (args[0] && /^\d{5,16}$/.test(args[0])) {
+        number = args[0];
     } else {
-        return reply("❌ Please reply to a message, mention a user, or provide a number to add.");
+        return reply("❌ Provide a valid number, mention a user, or reply to a message.");
     }
 
     const jid = number + "@s.whatsapp.net";
 
     try {
         await conn.groupParticipantsUpdate(from, [jid], "add");
-        reply(`✅ Successfully added @${number}`, { mentions: [jid] });
-    } catch (error) {
-        console.error("Add command error:", error);
-        reply("❌ Failed to add the member.");
+        await conn.sendMessage(from, {
+            text: `✅ Successfully added @${number}`,
+            mentions: [jid]
+        }, { quoted: mek });
+    } catch (err) {
+        console.error("❌ Add Error:", err);
+        reply("❌ Failed to add member. They may have privacy settings or the group is full.");
     }
 });
