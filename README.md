@@ -192,3 +192,16 @@ To start, fork this repository to your own GitHub account by clicking the button
 <p align="center">
   <img src="https://i.imgur.com/LyHic3i.gif" />
 </p>
+<h1 align="center">Thanks to our loyal followers</h1>
+
+<p align="center">
+  <a href="https://github.com/XdKing2/MALVIN-XD/stargazers">
+    <img src="http://reporoster.com/stars/dark/XdKing2/MALVIN-XD" alt="Stargazers repo roster for @XdKing2/MALVIN-XD">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/XdKing2/MALVIN-XD/network/members">
+    <img src="http://reporoster.com/forks/dark/XdKing2/MALVIN-XD" alt="Forkers repo roster for @XdKing2/MALVIN-XD">
+  </a>
+</p>
