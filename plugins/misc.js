@@ -43,7 +43,7 @@ async (conn, mek, m, { reply, q, isCreator }) => {
             default:
                 return reply(
                     `🛡️ *AntiDelete Setup*\n\n` +
-                    `Reply With:\n\n` +
+                    `Usage: eg .ad 1\n\n` +
                     `*1.* To Enable For All\n` +
                     `*2.* To Enable for Chats Only\n` +
                     `*3.* To Enable for Chats & Groups\n` +
