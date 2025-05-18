@@ -142,11 +142,21 @@ To start, fork this repository to your own GitHub account by clicking the button
   <img src="https://i.imgur.com/LyHic3i.gif" width="100%" />
 </p>
 
-### ⚠️ Disclaimer
 
-- 🔒 This bot is **not affiliated with WhatsApp Inc.** Use it responsibly.  
-- 🚨 **Misuse may lead to account bans.**  
-- ❌ **Cloning or modifying the bot without permission is prohibited.**
+## ⚠️ Disclaimer
+
+- ❗ MALVIN-XD is **not affiliated with WhatsApp Inc.**
+- 🚫 Misuse can lead to bans. Use at your own risk.
+- 🛑 Cloning or modifying without proper credit is prohibited.
+
+<p align="center"><img src="https://i.imgur.com/LyHic3i.gif" alt="divider"/></p>
+
+## 💡 Credits & Contributors
+
+> Made with ❤️ by Malvin
+
+- 👤 [Malvin King](https://github.com/XdKing2) – Creator & Maintainer  
+  - Optimized scripts, plugin management, core features
 
 ---
 
@@ -162,23 +172,21 @@ To start, fork this repository to your own GitHub account by clicking the button
 </div>
 
 
-## 🪀  SUPPORT CHANNELS
+## 🌐 Join Our Support Channels
 
-<div align="center">
-  <a href="https://whatsapp.com/channel/0029VbA6MSYJUM2TVOzCSb2A
-  ">
-    <img src="https://img.shields.io/badge/Join-WhatsApp%20Channel-25D366?style=for-the-badge&logo=whatsapp&logoColor=white&labelColor=000000"/>
-  </a>
-</div>
+> Never miss updates, feature drops, or guides!
 
-<div align="center">
-  <img src="https://github.com/XdKing2/MALVIN-XD/blob/main/assets/neonpulse.gif?raw=true" width="300"/>
-</div>
+- 📢 **WhatsApp Channel**  
+  [![Join WhatsApp](https://img.shields.io/badge/Join%20WhatsApp-Channel-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://whatsapp.com/channel/0029VbA6MSYJUM2TVOzCSb2A)
 
-> **Power up your dev journey – don’t miss updates, guides, or new commands!**
+- ▶️ **YouTube: MalvinTech**  
+  [![Subscribe YouTube](https://img.shields.io/badge/Subscribe-YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/@malvintech2)
 
-- **▶️ YouTube: MalvinTech** – Watch tutorials, pro tricks, and setup walkthroughs  
-  [![YouTube Channel](https://img.shields.io/badge/Subscribe-YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/@malvintech2)
+
+
+<p align="center">
+  <img src="https://i.imgur.com/LyHic3i.gif" alt="footer divider" />
+</p>
 
 ---
 
