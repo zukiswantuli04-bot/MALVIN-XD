@@ -39,27 +39,33 @@ To start, fork this repository to your own GitHub account by clicking the button
 
 ---
 
-### 🔑 Get Pairing Code
+### 🔐 Step 2: Get Your Session ID
 
-- **Session ID**  
-  <p align="left">
-    <a href="https://new-session-m3jx.onrender.com/pair" target="_blank"><img src="https://img.shields.io/badge/Session%20ID-000000?style=for-the-badge&logo=react&logoColor=white" alt="Get Pairing Code (Session ID)" /></a>
-  </p>
-
-- **creds.json**  
-  <p align="left">
-    <a href="https://taira-web-service.onrender.com/pair/" target="_blank"><img src="https://img.shields.io/badge/creds.json-ff0000?style=for-the-badge&logo=vercel&logoColor=white" alt="Get Pairing Code (creds.json)" /></a>
-  </p>
+Authenticate using **one** of the methods below to generate your `Session ID`.
 
 <p align="center">
-  <img src="https://i.imgur.com/LyHic3i.gif" />
+  <img src="https://i.imgur.com/LyHic3i.gif" alt="Authentication Flow Preview" />
 </p>
 
-- **Session App**  
-  <p align="left">
-    <a href="[https://new-session-m3jx.onrender.com/" target="_blank"><img src="https://img.shields.io/badge/Session%20App-000000?style=for-the-badge&logo=react&logoColor=white" alt="Get Pairing Code (Session ID)" /></a>
-  </p>
+> 🔸 Pair Code Authentication
 
+[![Get Pairing Code](https://img.shields.io/badge/Get%20Pairing%20Code-orange?style=for-the-badge&logo=opencv&logoColor=black)](https://new-session-m3jx.onrender.com/pair)
+
+> 🔹 QR Code Authentication
+
+[![Scan QR Code](https://img.shields.io/badge/Scan%20QR%20Code-000000?style=for-the-badge&logo=react&logoColor=white)](https://new-session-m3jx.onrender.com/qr)
+
+
+
+#### 🧩 Session App
+
+[![Session App](https://img.shields.io/badge/Session%20App-000000?style=for-the-badge&logo=react&logoColor=white)](https://new-session-m3jx.onrender.com/)
+
+
+
+<p align="center">
+  <img src="https://i.imgur.com/LyHic3i.gif" alt="Authentication Flow Preview" />
+</p>
 
 
 
