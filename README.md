@@ -173,6 +173,8 @@ Authenticate using **one** of the methods below to generate your `Session ID`.
     </tr>
   </table>
 </div>
+
+> Màke sure your panel have atleast 2gb ram
 <p align="center"><img src="https://i.imgur.com/LyHic3i.gif" alt="divider"/></p>
 
 ## ⚠️ Disclaimer
