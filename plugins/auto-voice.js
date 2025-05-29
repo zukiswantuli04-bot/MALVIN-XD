@@ -1,34 +1,33 @@
-const axios = require('axios');
-const config = require("../settings");
-const { malvin } = require("../malvin");
+const fs = require('fs');
+const path = require('path');
+const config = require('../settings');
+const { malvin } = require('../malvin');
 
-malvin({ on: "body" }, async (conn, m, msg, { from, body }) => {
-  try {
-    const jsonUrl = "https://raw.githubusercontent.com/XdKing2/MALVIN-DATA/main/autovoice.json";
-    const res = await axios.get(jsonUrl);
-    const voiceMap = res.data;
+malvin({
+  on: "body"
+},
+async (conn, mek, m, { from, body }) => {
+    const filePath = path.join(__dirname, '../autos/autovoice.json');
+    const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 
-    for (const keyword in voiceMap) {
-      if (body.toLowerCase() === keyword.toLowerCase()) {
-        if (config.AUTO_VOICE === "true") {
-          const audioUrl = voiceMap[keyword];
+    for (const text in data) {
+        if (body.toLowerCase() === text.toLowerCase()) {
+            if (config.AUTO_VOICE === 'true') {
+                const voicePath = path.join(__dirname, '../autos/autovoice', data[text]);
 
-          // Ensure it's a .mp3 or .m4a file
-          if (!audioUrl.endsWith(".mp3") && !audioUrl.endsWith(".m4a")) {
-            return conn.sendMessage(from, { text: "Invalid audio format. Only .mp3 and .m4a supported." }, { quoted: m });
-          }
+                if (fs.existsSync(voicePath)) {
+                    const voiceBuffer = fs.readFileSync(voicePath);
 
-          await conn.sendPresenceUpdate("recording", from);
-          await conn.sendMessage(from, {
-            audio: { url: audioUrl },
-            mimetype: "audio/mpeg", // This works fine for .mp3 and .m4a
-            ptt: true
-          }, { quoted: m });
+                    await conn.sendPresenceUpdate('recording', from);
+                    await conn.sendMessage(from, {
+                        audio: voiceBuffer,
+                        mimetype: 'audio/mp4',
+                        ptt: true
+                    }, { quoted: mek });
+                } else {
+                    console.warn(`Voice file not found: ${voicePath}`);
+                }
+            }
         }
-      }
     }
-  } catch (e) {
-    console.error("AutoVoice error:", e);
-    return conn.sendMessage(from, { text: "Error fetching voice: " + e.message }, { quoted: m });
-  }
 });
