@@ -61,7 +61,13 @@ async (conn, mek, m, { from, reply }) => {
                 }
             }
         }, { quoted: mek });
-
+        
+//send audio        
+await conn.sendMessage(from, {
+            audio: fs.readFileSync('./autos/hello.m4a'),
+                    mimetype: 'audio/mp4',
+                    ptt: true,
+                }, { quoted: mek });
     } catch (error) {
         console.error("❌ Error in repo command:", error);
         reply("⚠️ Sorry, something went wrong while fetching the repository information. Please try again later.");
