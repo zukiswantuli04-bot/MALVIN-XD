@@ -3,6 +3,7 @@ const { malvin, commands } = require('../malvin');
 const os = require("os")
 const {runtime} = require('../lib/functions')
 const axios = require('axios')
+const fs = require('fs')
 
 malvin({
     pattern: "menu3",
@@ -353,7 +354,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
         // Send audio
         await conn.sendMessage(from, {
-            audio: fs.readFileSync('./autos/intro.m4a'),
+            audio: fs.readFileSync('./autos/hello.m4a'),
             mimetype: 'audio/mp4',
             ptt: true
         }, { quoted: mek });
