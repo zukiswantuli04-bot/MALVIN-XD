@@ -229,7 +229,7 @@ Authenticate using **one** of the methods below to generate your `Session ID`.
 
 ```diff
 + Project Status: Active
-! Version: 4.1.5 Neon Edition
+! Version: 0.0.5 Neon Edition
 # License: APACHE
 ```
 <p align="center">
