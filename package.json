@@ -4,9 +4,6 @@
   "version": "0.0.5",
   "description": "Malvin Xd, a Multi Device Whatsapp Bot to Enhance Whatsapp Communication Experience",
   "main": "index.js",
-  "type": "commonjs",
-  "--engines": {
-    "node": ">=20.0.0"
   },
   "scripts": {
     "start": "pm2 start index.js --deep-monitoring --attach --name malvin",
