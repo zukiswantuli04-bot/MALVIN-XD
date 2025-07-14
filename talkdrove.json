@@ -4,7 +4,7 @@
   "description": "ᴊᴀᴠᴀsᴄʀɪᴘᴛ ᴡʜᴀᴛsᴀᴘᴘ ʙᴏᴛ ᴄʀᴇᴀᴛᴇᴅ ʙʏ ᴍᴀʟᴠɪɴ ᴋɪɴɢ",
   "logo": "https://files.catbox.moe/juxfce.jpg",
   "keywords": ["bot"],
-  "documentation-link": "https://new-session-x1e9.onrender.com",
+  "documentation-link": "https://new-session-x1e9.onrender.com/pair",
     "owner-verification":"malvink003@gmail.com",
   
     "env": {
@@ -19,6 +19,12 @@
       "description": "Enter owner number",
       "required": false,
       "value": "263714757857"
+      },
+      
+    "OWNER_NAME": {
+      "description": "Enter owner name",
+      "required": false,
+      "value": "ᴍᴀʟᴠɪɴ ᴋɪɴɢ"
 
     }  
   }
