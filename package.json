@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "0NE OF THE BEST BOT IN THE UNIVERSE",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "pm2 start index.js --deep-monitoring --attach --name MALVIN-XD",
     "stop": "pm2 stop MALVIN-XD",
