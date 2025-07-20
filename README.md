@@ -222,7 +222,7 @@ jobs:
   </table>
 </div>
 
-> 💡 Ensure your panel has **at least 2GB RAM**  
+> 💡 Ensure your panel has **at least 1GB RAM** for fast response 
 > 🔧 _Working on MALVIN-XD compatibility with free-tier panel hosts_
 
 <p align="center">
